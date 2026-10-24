@@ -1,0 +1,10 @@
+# Hugo build output (built by GitHub Actions)
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# macOS
+.DS_Store
+
+# Local working notes
+/Claude outputs/

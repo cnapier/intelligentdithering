@@ -1,0 +1,63 @@
+{{- /*
+  Home page post summary with featured image.
+  Overrides themes/puppet/layouts/_default/summary.html.
+
+  Image lookup order:
+    1. coverImage in front matter (matched anywhere in the page bundle, e.g. images/foo.webp)
+    2. First image referenced in the post body (markdown ![]() or <img src>)
+    3. First image file in the page bundle
+*/ -}}
+{{- $img := false -}}
+{{- $remote := "" -}}
+
+{{- with .Params.coverimage -}}
+  {{- $img = or ($.Resources.GetMatch .) ($.Resources.GetMatch (printf "**%s" (path.Base .))) -}}
+{{- end -}}
+
+{{- if not $img -}}
+  {{- with findRESubmatch `!\[[^\]]*\]\(\s*<?([^)\s>]+)|<img[^>]+src=["']([^"']+)` .RawContent 1 -}}
+    {{- $m := index . 0 -}}
+    {{- $src := or (index $m 1) (index $m 2) -}}
+    {{- $img = or ($.Resources.GetMatch $src) ($.Resources.GetMatch (printf "**%s" (path.Base $src))) -}}
+    {{- if and (not $img) (hasPrefix $src "http") -}}{{- $remote = $src -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and (not $img) (not $remote) -}}
+  {{- with .Resources.ByType "image" -}}{{- $img = index . 0 -}}{{- end -}}
+{{- end -}}
+
+<div class="post-preview{{ if or $img $remote }} has-thumb{{ end }}">
+  <a href="{{ .RelPermalink }}">
+      {{- if $img }}
+        {{- if in (slice "jpeg" "png" "webp" "gif" "tiff" "bmp") $img.MediaType.SubType }}
+          {{- $thumb := $img.Fill "300x300 Center q80" }}
+      <div class="post-thumb">
+        <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ .Title }}" loading="lazy" decoding="async">
+      </div>
+        {{- else }}
+      <div class="post-thumb">
+        <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" loading="lazy" decoding="async">
+      </div>
+        {{- end }}
+      {{- else if $remote }}
+      <div class="post-thumb">
+        <img src="{{ $remote }}" alt="{{ .Title }}" loading="lazy" decoding="async">
+      </div>
+      {{- end }}
+      <h2 class="post-title">{{ .Title }}</h2>
+      {{ with .Params.subtitle }}
+      <h3 class="post-subtitle">{{ . }}</h3>
+      {{ end }}
+      <div class="post-content-preview">
+        {{ if isset .Params "description" }} {{ index .Params "description" }}
+        {{ else }}
+        {{ .Summary | plainify | truncate 180 }}
+        {{ end }}
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by {{ with $.Params.author }} {{ $.Params.author }} {{ else }} {{ .Site.Params.author }} {{ end }} on {{ .Date.Format "Mon, Jan 2, 2006" }}
+  </p>
+</div>
+<hr>

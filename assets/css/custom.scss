@@ -1,0 +1,90 @@
+// Small square featured image to the left of each post summary on the home page
+$thumb-size: 120px;
+$thumb-size-sm: 80px;
+$thumb-gap: 20px;
+
+.post-preview.has-thumb {
+  display: flow-root; // contain the floated thumbnail
+
+  > a {
+    display: block;
+  }
+
+  > a > .post-thumb {
+    float: left;
+    width: $thumb-size;
+    height: $thumb-size;
+    margin: 4px $thumb-gap 10px 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #f2f2f2;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  // Keep text in its own column rather than wrapping under the image
+  > a > .post-title,
+  > a > .post-subtitle,
+  > a > .post-content-preview,
+  > .post-meta {
+    margin-left: $thumb-size + $thumb-gap;
+  }
+
+  > a:hover > .post-thumb img {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 767px) {
+    > a > .post-thumb {
+      width: $thumb-size-sm;
+      height: $thumb-size-sm;
+      margin-right: 15px;
+    }
+    > a > .post-title,
+    > a > .post-subtitle,
+    > a > .post-content-preview,
+    > .post-meta {
+      margin-left: $thumb-size-sm + 15px;
+    }
+  }
+}
+
+// Shorter home/list page header (theme default is 150px top and bottom)
+.intro-header .site-heading {
+  padding: 80px 0 35px;
+  @media only screen and (min-width: 768px) {
+    padding: 95px 0 60px;
+    h1 {
+      font-size: 60px;
+    }
+  }
+}
+
+// Featured image at the top of single post pages
+.post-featured-image {
+  margin: 0 0 30px;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+}
+
+// Cap in-post image height so tall/square images don't fill the screen.
+// Wide images are unaffected; click any image to zoom to full size.
+$post-img-max-height: 420px;
+
+.post-container figure:not(.post-featured-image) img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: $post-img-max-height;
+  margin: 0 auto;
+}
