@@ -24,7 +24,7 @@ shortname = "intelligentdithering"
 # would appear as unread to existing subscribers if included.
 limit = 5
 [services.googleAnalytics]
-id = "G-F60G8VDEG7"
+id = ""
 [outputs]
 home = ["HTML", "JSON", "RSS"]
 
