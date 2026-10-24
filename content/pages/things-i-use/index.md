@@ -33,6 +33,6 @@ Three nerds discussing tech, Apple, programming, and loosely related matters. Ho
 
 For my email I use FastMail. Rock solid, loads of amazing features including masked email for signing up to new sites you think might spam you. Can’t recommend it highly enough. You can get 10% off your first year by [using this link](https://ref.fm/u20028688)
 
-[**IONOS for web hosting / Virtual Private Servers**](https://app.fastmail.com/mail/Inbox/T85d293eeb98639b6.M14214a0fb2ef32a4c8a2c4fd?u=a8c9409f#)
+[**IONOS for web hosting / Virtual Private Servers**](http://aklam.io/tDQGIr)
 
-This site is hosted with [IONOS](https://app.fastmail.com/mail/Inbox/T85d293eeb98639b6.M14214a0fb2ef32a4c8a2c4fd?u=a8c9409f#). I have found their VPS (Virtual Private Server) offering to be great value, especially when it comes with Plesk Web Host edition FREE! So many tools to manage your virtual server with performance boosts, virus scanning etc. And it was all cheaper than my previous host that I had to manage via command line!
+This site is hosted with [IONOS](http://aklam.io/tDQGIr). I have found their VPS (Virtual Private Server) offering to be great value, especially when it comes with Plesk Web Host edition FREE! So many tools to manage your virtual server with performance boosts, virus scanning etc. And it was all cheaper than my previous host that I had to manage via command line!
