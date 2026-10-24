@@ -92,9 +92,7 @@
 {{ end }}
 
 
-{{ if not hugo.IsServer }}
-{{ template "_internal/google_analytics.html" . }}
-{{ end }}
+{{ partial "analytics.html" . }}
 
 {{ $zoom_js := resources.Get "zoomjs/zoom.js" | resources.Minify }}
 <script src="{{ $zoom_js.RelPermalink }}"></script>
