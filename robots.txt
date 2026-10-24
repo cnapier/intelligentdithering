@@ -1,0 +1,17 @@
+#
+# robots.txt
+#
+# For more information about the robots.txt standard, see:
+# http://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Sitemap: https://intelligentdithering.com/sitemap.xml
+Crawl-delay: 250
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /img/
+Disallow: /js/
+Disallow: /sass/
+Disallow: /zoomjs/
+
+

@@ -1,0 +1,11 @@
+ErrorDocument 404 /404.html
+
+# Old WordPress feed URLs -> Hugo feeds (permanent, so feed readers update the subscription)
+RedirectMatch 301 ^/feed/?$ /index.xml
+RedirectMatch 301 ^/feed/(rss|rss2|atom|rdf)/?$ /index.xml
+RedirectMatch 301 ^/category/([^/]+)/feed/?$ /categories/$1/index.xml
+RedirectMatch 301 ^/tag/([^/]+)/feed/?$ /tags/$1/index.xml
+
+# Old WordPress archive URLs -> Hugo taxonomy pages
+RedirectMatch 301 ^/category/([^/]+)/?$ /categories/$1/
+RedirectMatch 301 ^/tag/([^/]+)/?$ /tags/$1/
