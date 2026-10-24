@@ -26,9 +26,6 @@ More and more new sites are geo-blocking content. NordVPN allows me to quickly a
 
 Three nerds discussing tech, Apple, programming, and loosely related matters. Hosted by [Marco Arment](https://marco.org/), [Casey Liss](https://www.caseyliss.com/), and [John Siracusa](http://hypercritical.co/).
 
-[**Cortex**](https://www.relay.fm/cortex)
-
-CGP Grey and Myke Hurley are both independent content creators. Each episode, they get together to discuss their working lives.
 
 ## Websites / Services
 
