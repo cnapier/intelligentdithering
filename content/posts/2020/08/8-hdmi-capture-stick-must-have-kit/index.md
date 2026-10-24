@@ -9,6 +9,8 @@ tags:
   - "recommended"
 aliases:
   - "/8-hdmi-capture-stick-must-have-kit/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/8-hdmi-capture-stick-must-have-kit/"
 ---
 
 Been toying with the idea of making a few YouTube videos on setting up various Raspberry Pi things and thought that just pointing a camera at the monitor would look a bit rubbish.

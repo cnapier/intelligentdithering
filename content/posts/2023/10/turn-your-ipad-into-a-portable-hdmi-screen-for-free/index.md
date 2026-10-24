@@ -10,6 +10,8 @@ tags:
   - "recommended"
 aliases:
   - "/turn-your-ipad-into-a-portable-hdmi-screen-for-free/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/turn-your-ipad-into-a-portable-hdmi-screen-for-free/"
 ---
 
 Using the free app Orion you can connect any video source to your iPad and use it as a portable HDMI monitor and screen recorder!

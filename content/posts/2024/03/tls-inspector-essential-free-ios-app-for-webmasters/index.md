@@ -9,6 +9,8 @@ tags:
   - "recommended"
 aliases:
   - "/tls-inspector-essential-free-ios-app-for-webmasters/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/tls-inspector-essential-free-ios-app-for-webmasters/"
 ---
 
 [TLS Inspector](https://tlsinspector.com) is a great **free** app from developer Ian Spence that I use quite regularly at home and _especially_ in work.

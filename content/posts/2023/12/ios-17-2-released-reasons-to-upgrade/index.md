@@ -8,6 +8,8 @@ tags:
   - "news"
 aliases:
   - "/ios-17-2-released-reasons-to-upgrade/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/ios-17.2-released-reasons-to-upgrade/"
 ---
 
 ![](images/image-2-1024x585.png)

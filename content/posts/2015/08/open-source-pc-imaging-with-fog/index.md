@@ -10,6 +10,8 @@ tags:
   - "sysadmin"
 aliases:
   - "/open-source-pc-imaging-with-fog/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/open-source-pc-imaging-with-fog/"
 ---
 
 If you manage a large number of Windows PCs you will want a way to set them up as quickly and painlessly as possible.

@@ -10,6 +10,8 @@ tags:
   - "news"
 aliases:
   - "/new-ios-17-update-features-i-will-be-using-immediately/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/new-ios-17-update-features-i-will-be-using-immediately/"
 ---
 
 The iOS 17 update has just released for iPhone and iPad and it has some fantastic new features. Many are small but they have a big impact. Here are a few of my favourites.

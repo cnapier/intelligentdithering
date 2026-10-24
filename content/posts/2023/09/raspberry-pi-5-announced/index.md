@@ -8,6 +8,8 @@ tags:
   - "raspberry-pi"
 aliases:
   - "/raspberry-pi-5-announced/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/raspberry-pi-5-announced/"
 ---
 
 The [Raspberry Pi Trading Company](https://www.raspberrypi.com/news/introducing-raspberry-pi-5/) have just announced the Raspberry Pi 5 and it is available to pre-order now, shipping in late October. Of course they announced this less than 24 hours after I [wrote a post about using the Raspberry Pi 4 for Digital Signage](https://intelligentdithering.com/digital-signage-on-a-budget-with-raspberry-pi-and-google-slides-in-2023/)! This new Pi will be even better for that as you will be able to run two 4K screens at once with it!
@@ -45,7 +47,7 @@ USB ports now have double the bandwidth on the Raspberry Pi 5 and there are 2x U
 
 The MicroSD slot has been upgraded to be twice as fast on Raspberry Pi 5, and combined with the CPU upgrades I think this will really be noticeable in daily use. Boot-up times will feel incredibly quick with this upgrade as long as you [get a decent SD card](https://amzn.to/3RCrcpU) to take advantage of it.
 
-## PCI-Express!!![](#pci-express)
+## PCI-Express!!!
 
 Yes you read that right. The card has a port to break out a single lane PCI-Express port which should open up tons of possibilities for connecting high speed peripherals in the future. Think 10Gig ethernet cards, possibly graphics cards and fast storage RAID solutions. This is a space to watch!
 
@@ -53,7 +55,7 @@ Yes you read that right. The card has a port to break out a single lane PCI-Expr
 
 These dual CSI/DSI ports will support any combination of up to two cameras or displays. But beware, the connectors are different on the Raspberry Pi 5 compared to the old CSI ports so you may need to buy new ribbon cable adaptors to make your existing kit work. Plenty of the usual stockists will have these cables ready for launch.
 
-## Raspberry Pi 5 gets a POWER BUTTON!![](#raspberry-pi-5-gets-a-power-button)
+## Raspberry Pi 5 gets a POWER BUTTON!!
 
 This might be the biggest FINALLY of all! They have added a power button to the Raspberry Pi 5 so you no longer have to pull the USB cable out or go hoking under your desk looking for the power switch. And the new Raspberry Pi official case comes with an outer button lined up to this for easy access.
 

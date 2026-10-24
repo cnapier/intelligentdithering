@@ -7,6 +7,8 @@ tags:
   - "sysadmin"
 aliases:
   - "/my-method-for-windows-system-imaging/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/my-method-for-windows-system-imaging/"
 ---
 
 In our school we use FOG as our imaging system [as I have mentioned before.](https://intelligentdithering.com/open-source-pc-imaging-with-fog/)

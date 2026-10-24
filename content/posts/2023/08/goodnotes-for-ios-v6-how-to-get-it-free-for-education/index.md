@@ -11,6 +11,8 @@ tags:
   - "recommended"
 aliases:
   - "/goodnotes-for-ios-v6-how-to-get-it-free-for-education/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/goodnotes-for-ios-v6-how-to-get-it-free-for-education/"
 ---
 
 Goodnotes for iOS is an amazing app for note taking on iPad and has recently had a major update with impressive new features.

@@ -11,6 +11,8 @@ tags:
 coverImage: "kvmswitch.webp"
 aliases:
   - "/8-port-ip-kvm-on-a-budget/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/8-port-ip-kvm-on-a-budget/"
 ---
 
 _Building a cheap IP KVM using open source software and Raspberry Pi_
@@ -65,7 +67,7 @@ Then you will need to connect the power to the PiKVM via the USB-C Power and dat
 
 This KVM switch has 4 ports so we are able to connect the PiKVM for control as well as a physical keyboard and mouse.
 
-## Step 3: Reverse engineer the control box![](#step-3-reverse-engineer-the-control-box)
+## Step 3: Reverse engineer the control box!
 
 As previously mentioned, the KVM switch did not have keyboard hotkey switching so I couldn’t remotely switch from the PiKVM software. Oops!
 

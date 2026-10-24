@@ -1,6 +1,6 @@
 ---
 title: "Dual Screen DIY CyberDeck"
-date: 2025-07-30
+date: 2025-07-30T10:52:46Z
 categories: 
   - "news"
   - "recommended"
@@ -11,6 +11,8 @@ tags:
 coverImage: "Screenshot-2025-07-30-at-11.51.30.png"
 aliases:
   - "/dual-screen-diy-cyberdeck/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "https://intelligentdithering.com/?p=470"
 ---
 
 A cyberdeck is a custom-built, portable computer, often with a cyberpunk aesthetic, designed for accessing and interacting with cyberspace. In science fiction, they are used by hackers to connect to digital worlds, often for activities like hacking, data theft, or controlling machines. Real-world cyberdecks are typically built around single-board computers and designed to evoke this cyberpunk style and scratch an itch for the maker who designs it.

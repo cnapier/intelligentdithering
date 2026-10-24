@@ -9,6 +9,8 @@ tags:
   - "ios"
 aliases:
   - "/ios-9-features-of-note-for-education/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/ios-9-features-of-note-for-education/"
 ---
 
 So Apple’s iOS 9 operating system for iPhones, iPads and iPods is currently in open Public Beta and will be released to the general public en masse probably around mid September.

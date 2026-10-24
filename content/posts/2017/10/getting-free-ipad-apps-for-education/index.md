@@ -9,6 +9,8 @@ tags:
   - "ios"
 aliases:
   - "/getting-free-ipad-apps-for-education/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/getting-free-ipad-apps-for-education/"
 ---
 
 I may be late to the party on this one but figured it was worth sharing just in case others have not come across it.

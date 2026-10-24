@@ -9,6 +9,8 @@ tags:
   - "personal"
 aliases:
   - "/lockdown-mental-health-1-year-later/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/lockdown-mental-health-1-year-later/"
 ---
 
 ![Laptop with the words Mental Health on the screen ](images/image-1024x682.png)

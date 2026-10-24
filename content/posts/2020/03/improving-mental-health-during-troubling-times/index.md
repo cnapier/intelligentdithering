@@ -9,6 +9,8 @@ tags:
   - "mental-health"
 aliases:
   - "/improving-mental-health-during-troubling-times/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/improving-mental-health-during-troubling-times/"
 ---
 
 This CoronaVirus outbreak is understandably difficult for everyone. Many people will be struggling with their mental health, including “normal” people who have not had issues before. I hope that sharing what little I know from my personal experience might help even one person.

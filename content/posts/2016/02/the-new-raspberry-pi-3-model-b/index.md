@@ -7,6 +7,8 @@ tags:
   - "raspberry-pi"
 aliases:
   - "/the-new-raspberry-pi-3-model-b/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/the-new-raspberry-pi-3-model-b/"
 ---
 
 The [Raspberry Pi Foundation](https://www.raspberrypi.org/) have just celebrated their 4th birthday today (although due to leap year technicalities they are claiming it is only their 1st birthday!). And what better way to celebrate than with the release of a fresh new Raspberry Pi!

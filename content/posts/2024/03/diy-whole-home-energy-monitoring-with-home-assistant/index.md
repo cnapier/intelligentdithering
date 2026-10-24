@@ -10,6 +10,8 @@ tags:
   - "home-automation"
 aliases:
   - "/diy-whole-home-energy-monitoring-with-home-assistant/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/diy-whole-home-energy-monitoring-with-home-assistant/"
 ---
 
 - [Why energy monitoring?￼](#why-energy-monitoring)

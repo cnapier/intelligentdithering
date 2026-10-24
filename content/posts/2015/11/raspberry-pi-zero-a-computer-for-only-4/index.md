@@ -8,6 +8,8 @@ tags:
   - "recommended"
 aliases:
   - "/raspberry-pi-zero-a-computer-for-only-4/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/raspberry-pi-zero-a-computer-for-only-4/"
 ---
 
 This really is an amazing time to be a geek.

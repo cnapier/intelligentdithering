@@ -11,6 +11,8 @@ tags:
   - "recommended"
 aliases:
   - "/the-perfect-month/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/the-perfect-month/"
 ---
 
 So I have a dark secret….. I play [Pokemon Go](https://geo.itunes.apple.com/gb/app/pokemon-go/id1094591345?mt=8&uo=4&at=1010l6dq). It is a part of the reason things have been so quiet on here.

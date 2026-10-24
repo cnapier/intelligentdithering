@@ -9,6 +9,8 @@ tags:
   - "setapp"
 aliases:
   - "/supercharge-your-mac-with-mac-apps-from-setapp/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/supercharge-your-mac-with-mac-apps-from-setapp/"
 ---
 
 #### 5 Mac apps that I use every day (out of over 240!) for one low monthly price.[](#5-mac-apps-that-i-use-every-day-out-of-over-240-for-one-low-monthly-price)

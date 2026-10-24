@@ -11,6 +11,8 @@ tags:
 coverImage: "Series-E235_Digital-Signage.webp"
 aliases:
   - "/free-digital-signage-with-raspberry-pi-and-google-slides/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/free-digital-signage-with-raspberry-pi-and-google-slides/"
 ---
 
 Using a Raspberry Pi with Google Slides is an excellent way to make very cheap and effective digital signage. In this guide I will show you how to build this. This is an updated method as the Screenly / Anthias software doesn’t seem to like 4K screens for Google Slides! And the beauty of it: once you set it up, you don’t have to touch the Pi again, just edit the Google Slides presentation and watch your screens update!

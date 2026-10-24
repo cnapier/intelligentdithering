@@ -9,6 +9,8 @@ tags:
   - "tools"
 aliases:
   - "/make-the-ultimate-bootable-usb-drive/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/make-the-ultimate-bootable-usb-drive/"
 ---
 
 _Creating a USB Swiss army knife full of tech tools for all your geeky needs_

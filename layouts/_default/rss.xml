@@ -1,0 +1,49 @@
+{{- /*
+  RSS feed matching the old WordPress feed so subscribers don't see re-published items:
+  - posts only (no pages)
+  - item GUID = original WordPress GUID from front matter `guid`, else permalink
+  - full content in content:encoded, with lazy-loaded images rewritten to absolute src
+  - item count from [services.rss] limit in config.toml
+*/ -}}
+{{- $pages := slice -}}
+{{- if .IsHome -}}
+  {{- $pages = where site.RegularPages "Section" "posts" -}}
+{{- else if .IsSection -}}
+  {{- $pages = .RegularPages -}}
+{{- else -}}
+  {{- $pages = where .Pages "Section" "posts" -}}
+{{- end -}}
+{{- $limit := site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}{{- $pages = $pages | first $limit -}}{{- end -}}
+{{- $fmt := "Mon, 02 Jan 2006 15:04:05 -0700" -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} on {{ site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ site.Params.description }}</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    {{- with .OutputFormats.Get "RSS" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end }}
+    {{- with $pages }}
+    <lastBuildDate>{{ (index . 0).Date.Format $fmt | safeHTML }}</lastBuildDate>
+    {{- end }}
+    {{- range $pages }}
+    {{- $content := .Content | replaceRE `data-src="` `src="` | replaceRE `src="images/` (printf `src="%simages/` .Permalink) }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format $fmt | safeHTML }}</pubDate>
+      {{- with .Params.guid }}
+      <guid isPermaLink="false">{{ . }}</guid>
+      {{- else }}
+      <guid isPermaLink="true">{{ .Permalink }}</guid>
+      {{- end }}
+      <description>{{ .Summary | plainify | transform.XMLEscape | safeHTML }}</description>
+      <content:encoded>{{ $content | transform.XMLEscape | safeHTML }}</content:encoded>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

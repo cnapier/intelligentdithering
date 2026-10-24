@@ -9,6 +9,8 @@ tags:
   - "recommended"
 aliases:
   - "/geeky-stuff-to-do-during-lockdown/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/geeky-stuff-to-do-during-lockdown/"
 ---
 
 You can and should do these things all year round really, but perhaps especially so now.
@@ -45,7 +47,7 @@ Here is a fantastic list of lifelong learning resources to browse through. Some 
 
 ## **Relax / Distract**[](#relax--distract)
 
-### See the International Space Station in your garden![](#see-the-international-space-station-in-your-garden)
+### See the International Space Station in your garden!
 
 The ISS is making passes over the UK 21st March 2020 - 4th April 2020. The fantastic MeteorWatch website has a [list of the timings here.](https://www.meteorwatch.org/iss-international-space-station-times-uk-spring-2020/) They also provide alerts of passes on Twitter [@VirtualAstro](https://twitter.com/VirtualAstro)
 

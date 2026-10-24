@@ -9,6 +9,8 @@ tags:
   - "open-source"
 aliases:
   - "/teaching-with-moodle-an-introduction/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/teaching-with-moodle-an-introduction/"
 ---
 
 If you are a beginner to the [Moodle Learning Management System](http://www.moodle.org) or even a current user just wishing to update and hone their skills then I can highly recommend this free online course delivered by the Moodle team themselves.

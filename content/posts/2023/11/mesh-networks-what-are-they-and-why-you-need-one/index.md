@@ -3,6 +3,8 @@ title: "Mesh networks: What are they and why you need one"
 date: 2023-11-08
 aliases:
   - "/mesh-networks-what-are-they-and-why-you-need-one/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/mesh-networks-what-are-they-and-why-you-need-one/"
 ---
 
 You may have heard of or seen “mesh networks” mentioned on the Internet.  What are they and why on earth would you need one?
@@ -33,7 +35,7 @@ In “the olden days” you could add extra Wi-Fi access points to your home net
 
 But worse than that, if you still had a very weak signal from downstairs, it wouldn’t be smart enough to switch over and you would have to manually disconnect from one and connect to the other. And of course you would forget to do this and just curse the Internet! Dark times.
 
-## Mesh networks to the rescue![](#mesh-networks-to-the-rescue)
+## Mesh networks to the rescue!
 
 In a mesh network, all of the access points are named the same, so you just have one “Home” Wi-Fi network. All of these mesh network nodes communicate with each other to make the network smart, so when you move from downstairs to upstairs, they detect that you are closer to the upstairs one and they “hand off” your device to the closest node. This is done seamlessly using a technology called “roaming” and this means no break in connection.
 

@@ -8,6 +8,8 @@ tags:
   - "ios"
 aliases:
   - "/help-people-with-dyslexia-using-this-free-font/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/help-people-with-dyslexia-using-this-free-font/"
 ---
 
 Just a quick post today to draw attention to something we have used for a while but I keep meaning to mention.

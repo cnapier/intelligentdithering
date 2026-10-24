@@ -9,6 +9,8 @@ tags:
   - "recommended"
 aliases:
   - "/tp-link-travel-router/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/tp-link-travel-router/"
 ---
 
 A travel router has been an item on my “to buy” list for some and I am now on a 5 day holiday to England so took this as the impetus to go ahead and buy one. So I bought the [TP-Link TL-MR3020 Travel Router from Amazon](http://www.amazon.co.uk/gp/product/B00634PLTW/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00634PLTW&linkCode=as2&tag=th0e-21&linkId=UCNS364EVO2GDUA6).

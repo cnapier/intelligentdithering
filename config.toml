@@ -19,6 +19,10 @@ ignoreErrors = ["error-remote-getjson"]
 [services]
 [services.disqus]
 shortname = "intelligentdithering"
+[services.rss]
+# Keep the feed short: older posts were never in the WordPress feed and
+# would appear as unread to existing subscribers if included.
+limit = 5
 [services.googleAnalytics]
 id = ""
 [outputs]

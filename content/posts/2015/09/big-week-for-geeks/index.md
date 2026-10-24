@@ -9,6 +9,8 @@ tags:
   - "raspberry-pi"
 aliases:
   - "/big-week-for-geeks/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/big-week-for-geeks/"
 ---
 
 It is set to be an exciting week for geeks. Tomorrow sees Apple holding their annual iPhone launch event and the Raspberry Pi foundation just launched their official 7 inch touch display for the Raspberry Pi.

@@ -8,6 +8,8 @@ tags:
   - "raspberry-pi"
 aliases:
   - "/grow-wild-raspberry-pi-time-lapse-video/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/grow-wild-raspberry-pi-time-lapse-video/"
 ---
 
 This year our school Eco Club began a project to plant a wild flower area in the school grounds. This was part of the Grow Wild scheme run in association with Kew Gardens.

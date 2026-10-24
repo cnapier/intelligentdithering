@@ -9,6 +9,8 @@ tags:
   - "task-management"
 aliases:
   - "/dump-your-brain-fast-with-this-free-ios-shortcut/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/dump-your-brain-fast-with-this-free-ios-shortcut/"
 ---
 
 ![brain dump into your phone](images/image.png)
@@ -51,7 +53,7 @@ Then repeat that whole process for each item.
 
 I wanted a way to dump tasks out fast with minimal speech in between all from a single button press or voice command. It was time to make an iOS Shortcut to do the heavy lifting!
 
-## Enter the Brain Dumper iOS shortcut![](#enter-the-brain-dumper-ios-shortcut)
+## Enter the Brain Dumper iOS shortcut!
 
 [Download the Brain Dumper Shortcut for Things](https://www.icloud.com/shortcuts/d33b93a222184073abc2e2e3297a940c)
 

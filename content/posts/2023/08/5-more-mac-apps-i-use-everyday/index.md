@@ -9,6 +9,8 @@ tags:
   - "setapp"
 aliases:
   - "/5-more-mac-apps-i-use-everyday/"
+# Original WordPress feed GUID - keep so feed readers do not re-show this post
+guid: "http://localhost:1313/5-more-mac-apps-i-use-everyday/"
 ---
 
 As a Mac user, I’ve discovered several Mac apps that have become indispensable in my daily routine. All of these apps are included in the Setapp subscription, [over 240 amazing apps for just $9.99 a month.](https://setapp.sjv.io/c/4159433/343321/5114)
