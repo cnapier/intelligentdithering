@@ -25,10 +25,13 @@
           <h1>{{ .Title }}</h1>
           {{- /* Site override: no empty heading when a post has no subtitle */}}
           {{ with $.Params.subtitle }}<h2 class="subheading">{{ . }}</h2>{{ end }}
+          {{- /* Site override: byline and date on posts only, not standalone pages */}}
+          {{- if eq .Section "posts" }}
           <span class="meta">
             Posted by {{ with $.Params.author }} {{ $.Params.author }} {{ else }} {{ .Site.Params.author }} {{ end }}
             on {{ .Date.Format "Mon, Jan 2, 2006" }}
           </span>
+          {{- end }}
         </div>
       </div>
     </div>

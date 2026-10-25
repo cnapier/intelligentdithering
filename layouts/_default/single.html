@@ -29,9 +29,12 @@
         {{- end }}
         {{ .Content }}
 
+        {{- /* Site override: prev/next on posts only, and only between posts
+               (InSection, so a post never links to a standalone page) */}}
+        {{- if eq .Section "posts" }}
         <hr style="visibility: hidden;" />
         <ul class="pager">
-          {{ with .Prev }}
+          {{ with .PrevInSection }}
           <li class="previous">
             <a href="{{ .RelPermalink }}" data-toggle="tooltip" data-placement="top" title="{{ .Title }}">
               Previous<br>
@@ -39,7 +42,7 @@
             </a>
           </li>
           {{ end }}
-          {{ with .Next }}
+          {{ with .NextInSection }}
           <li class="next">
             <a href="{{ .RelPermalink }}" data-toggle="tooltip" data-placement="top" title="{{ .Title }}">
               Next<br>
@@ -49,6 +52,7 @@
           {{ end }}
         </ul>
         <hr style="visibility: hidden;" />
+        {{- end }}
 
         <!-- comments -->
         {{ partial "comments.html" . }}

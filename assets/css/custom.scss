@@ -957,3 +957,21 @@ html body #tag_cloud a {
     color: $dm-bg;
   }
 }
+
+// Beehiiv signup form (shortcode). The loader drops an inline iframe with a
+// fixed width next to its <script>; inside the left-aligned post column that
+// sits flush left. Centre whatever Beehiiv injects and keep it within the column.
+.beehiiv-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+  min-height: 120px; // reserve space so the page doesn't jump when the form loads
+
+  iframe {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    color-scheme: light; // same white-canvas fix as the Disqus iframe, for dark mode
+  }
+}

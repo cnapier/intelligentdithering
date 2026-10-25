@@ -1,0 +1,7 @@
+{{- /* Beehiiv signup form. Usage: {{< beehiiv id="form-uuid" >}} */ -}}
+{{- with .Get "id" }}
+<div class="beehiiv-form">
+  <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="{{ . }}"></script>
+  <noscript><p>The signup form needs JavaScript.</p></noscript>
+</div>
+{{- end }}
