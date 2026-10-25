@@ -1,5 +1,6 @@
 ---
 title: "Cheap DIY 8 Port IP KVM on a budget"
+description: "Build a cheap 8-port IP KVM with a Raspberry Pi 4, PiKVM and an off-the-shelf HDMI KVM switch – the parts list, setup steps and fixes."
 date: 2025-01-31
 categories: 
   - "guides"
@@ -17,13 +18,13 @@ guid: "http://localhost:1313/8-port-ip-kvm-on-a-budget/"
 
 _Building a cheap IP KVM using open source software and Raspberry Pi_
 
-- [DIY IP KVM Parts￼](#parts)
-- [Step 1: Fit the KVM Switch￼](#step-1-fit-the-kvm-switch)
-- [Step 2: Setup and connect PiKVM￼](#step-2-setup-and-connect-pikvm)
-- [Step 3: Reverse engineer the control box!￼](#step-3-reverse-engineer-the-control-box)
+- [DIY IP KVM Parts](#parts)
+- [Step 1: Fit the KVM Switch](#step-1-fit-the-kvm-switch)
+- [Step 2: Setup and connect PiKVM](#step-2-setup-and-connect-pikvm)
+- [Step 3: Reverse engineer the control box!](#step-3-reverse-engineer-the-control-box)
     - [/usr/bin/local/kvm.py](#usrbinlocalkvmpy)
     - [/etc/kvmd/override.yaml](#overrideyaml)
-- [Conclusion￼](#conclusion)
+- [Conclusion](#conclusion)
 
 We recently had a small server outage in work. Nothing mission critical, it was over a weekend and coming up to Christmas holidays. It could wait, but that little itch in my brain couldn’t let it sit. I tried several remote remedies to bring it back online but it needed physical access. It had to wait until Monday.
 
@@ -33,7 +34,7 @@ But if they go down physical access can be a pain as we don’t have a KVM switc
 
 So the plan was to get a cheap 8-port USB and HDMI KVM switch, attach it to a [PiKVM](https://pikvm.org/) device to get it on the network and Bob’s your uncle, you now have a DIY IP KVM. I hit a few snags along the way but we got it running, so this is documentation of the process for my own records and to help anyone else hoping to replicate this.
 
-## DIY IP KVM Parts[](#parts)
+## DIY IP KVM Parts
 
 - 🔗 [8 port HDMI KVM Switch](https://amzn.to/3DOeVKt)
 
@@ -49,15 +50,15 @@ So the plan was to get a cheap 8-port USB and HDMI KVM switch, attach it to a [P
 
 ![IP KVM using cheap parts and open source](images/kvmswitch-1024x896.webp)
 
-## Step 1: Fit the KVM Switch[](#step-1-fit-the-kvm-switch)
+## Step 1: Fit the KVM Switch
 
 This part was the easiest. Just hook up all your servers to the KVM switch and test it out.
 
 However it was at this point I noticed what could have been a show stopper. Most KVM switches have a key sequence you can use to switch between machines, usually something like tapping Scroll Lock twice and then hitting Escape, or Scroll Lock followed by the number of the port you wish to switch to. This one didn’t! It comes with a switch panel with 8 buttons on it and an IR remote, as well as being able to press the illuminated buttons on the front panel.
 
-## Step 2: Setup and connect PiKVM[](#step-2-setup-and-connect-pikvm)
+## Step 2: Setup and connect PiKVM
 
-This step is well documented at the [PiKVM website](https://pikvm.org). Basically download the appropriate image for your Raspberry Pi it will be hosted on (I used [a Pi4](https://intelligentdithering.com/raspberry-pi-5-announced/)), flash it to an SD card, boot the Pi and then SSH in to configure some options.
+This step is well documented at the [PiKVM website](https://pikvm.org). Basically download the appropriate image for your Raspberry Pi it will be hosted on (I used [a Pi4](/posts/2023/09/raspberry-pi-5-announced/)), flash it to an SD card, boot the Pi and then SSH in to configure some options.
 
 You will also need to connect the WaveShare HDMI capture device to the CSI port on the Pi and connect the HDMI output from the KVM switch to the Pi.
 
@@ -208,7 +209,7 @@ Then I cut open an old Mini-USB cable and exposed the data lines. You do not nee
 
 I then tested the switching using the kvm.py script above from the command line. Bingo!
 
-## Conclusion[](#conclusion)
+## Conclusion
 
 It was a lot of fiddling about but we now have web based IP KVM access to all of our servers and the ability to easily switch between them in the web interface.
 

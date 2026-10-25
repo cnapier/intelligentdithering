@@ -1,5 +1,6 @@
 ---
 title: "Brain dump fast with this free iOS Shortcut"
+description: "Get everything out of your head and into Things fast with Brain Dumper, a free iOS Shortcut for capturing tasks by voice when overwhelm hits."
 date: 2023-10-22
 categories: 
   - "guides"
@@ -16,8 +17,8 @@ guid: "http://localhost:1313/dump-your-brain-fast-with-this-free-ios-shortcut/"
 ![brain dump into your phone](images/image.png)
 
 - [Introduction](#introduction)
-- [So how do we combat Messy Brain / overwhelm?￼](#so-how-do-we-combat-messy-brain--overwhelm)
-- [Enter the Brain Dumper iOS shortcut!￼](#enter-the-brain-dumper-ios-shortcut)
+- [So how do we combat Messy Brain / overwhelm?](#so-how-do-we-combat-messy-brain--overwhelm)
+- [Enter the Brain Dumper iOS shortcut!](#enter-the-brain-dumper-ios-shortcut)
 
 ## Introduction
 
@@ -25,11 +26,11 @@ Get things out of your head and into your task manager FAST with this free iOS s
 
 I use my devices for everything. My iPhone is always at hand and I am never far from my iPad or Mac. Having my to-do list all in one place that I can access at any time is critical for me to function.
 
-With my [particular cocktail of mental disorders](https://intelligentdithering.com/improving-mental-health-during-troubling-times/) I find that sometimes I can get a serious feeling of overwhelm. My wife calls this “Messy Brain”, and it’s pretty obvious when it is happening to me. I tend to dull down, withdraw, get even more introverted than normal and just feel totally “meh”.
+With my [particular cocktail of mental disorders](/posts/2020/03/improving-mental-health-during-troubling-times/) I find that sometimes I can get a serious feeling of overwhelm. My wife calls this “Messy Brain”, and it’s pretty obvious when it is happening to me. I tend to dull down, withdraw, get even more introverted than normal and just feel totally “meh”.
 
 The human brain’s working memory can really only hold around [7 items (plus or minus 2)](https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two#:~:text=It%20was%20written%20by%20the,memory%20is%207%20%c2%b1%202.) at a time before it runs into problems. This is not ideal for holding a task list of 30 or 40 things you need to do. Inevitably you will forget them: as another item gets added to the list, one drops off the end. But the brain still remembers that there WAS something on that list. You don’t know what you have forgotten but you DO get the horrible dread that you are going to drop the ball. That’s when Messy Brain kicks in.
 
-## So how do we combat Messy Brain / overwhelm?[](#so-how-do-we-combat-messy-brain--overwhelm)
+## So how do we combat Messy Brain / overwhelm?
 
 The first course of action I take when this happens is to notice it. Once I have accepted I am in overwhelm mode, I just need to get everything out of my head in front of me so that it is easier to break down into smaller chunks to process.
 

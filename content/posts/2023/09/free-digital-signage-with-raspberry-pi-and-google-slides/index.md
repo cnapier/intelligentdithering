@@ -11,23 +11,24 @@ tags:
 coverImage: "Series-E235_Digital-Signage.webp"
 aliases:
   - "/free-digital-signage-with-raspberry-pi-and-google-slides/"
+  - "/digital-signage-on-a-budget-with-raspberry-pi-and-google-slides-in-2023/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/free-digital-signage-with-raspberry-pi-and-google-slides/"
 ---
 
 Using a Raspberry Pi with Google Slides is an excellent way to make very cheap and effective digital signage. In this guide I will show you how to build this. This is an updated method as the Screenly / Anthias software doesn’t seem to like 4K screens for Google Slides! And the beauty of it: once you set it up, you don’t have to touch the Pi again, just edit the Google Slides presentation and watch your screens update!
 
-**UPDATE: The Raspberry Pi Trading Company have just announced the release of the Raspberry Pi 5. [Read all about it on my new post here](https://intelligentdithering.com/raspberry-pi-5-announced/). (It can run dual 4K displays, so it will be perfect for your next digital signage project!)**
+**UPDATE: The Raspberry Pi Trading Company have just announced the release of the Raspberry Pi 5. [Read all about it on my new post here](/posts/2023/09/raspberry-pi-5-announced/). (It can run dual 4K displays, so it will be perfect for your next digital signage project!)**
 
-- [What you need:￼](#what-you-need)
-    - [Step 1: Prepare your Google Slides presentation for Digital Signage￼](#step-1-prepare-your-google-slides-presentation-for-digital-signage)
-    - [Step 2: Prepare the SD Card￼](#step-2-prepare-the-sd-card)
-    - [Step 3: Log in and setup the Pi￼](#step-3-log-in-and-setup-the-pi)
-    - [Bonus step: Auto power off and on￼](#bonus-step-auto-power-off-and-on)
+- [What you need:](#what-you-need)
+    - [Step 1: Prepare your Google Slides presentation for Digital Signage](#step-1-prepare-your-google-slides-presentation-for-digital-signage)
+    - [Step 2: Prepare the SD Card](#step-2-prepare-the-sd-card)
+    - [Step 3: Log in and setup the Pi](#step-3-log-in-and-setup-the-pi)
+    - [Bonus step: Auto power off and on](#bonus-step-auto-power-off-and-on)
 
 ![Digital Signage in action](images/Series-E235_Digital-Signage-1024x683.webp)
 
-## What you need:[](#what-you-need)
+## What you need:
 
 - [Raspberry Pi 4](https://amzn.to/458Ooze) and power adaptors etc
     
@@ -44,7 +45,7 @@ Using a Raspberry Pi with Google Slides is an excellent way to make very cheap a
 - About 30 minutes!
     
 
-### Step 1: Prepare your Google Slides presentation for Digital Signage[](#step-1-prepare-your-google-slides-presentation-for-digital-signage)
+### Step 1: Prepare your Google Slides presentation for Digital Signage
 
 Before we start, you should have a Google Slides presentation prepared that you want to show on your digital signage. Make the presentation with no transitions or timings, as it will be set to the same timings for every slide in the sharing phase.
 
@@ -57,7 +58,7 @@ Then click Publish.
 
 Copy the URL that is shown and save it somewhere you can get later.
 
-### Step 2: Prepare the SD Card[](#step-2-prepare-the-sd-card)
+### Step 2: Prepare the SD Card
 
 Download Raspberry Pi Imager from [https://](https://www.raspberrypi.com/software/)[www.raspberrypi.com](https://www.raspberrypi.com/software/)[/software/](https://www.raspberrypi.com/software/)
 
@@ -114,7 +115,7 @@ Preparing the SD Card for your Digital Signage
 
 Once complete, put the card in to the Raspberry Pi and fire it up.
 
-### Step 3: Log in and setup the Pi[](#step-3-log-in-and-setup-the-pi)
+### Step 3: Log in and setup the Pi
 
 Log in using SSH with whatever username and host name you gave the Digital Signage Pi during the SD Card prep phase. For example “`ssh Colin@digitalsign.local`”
 
@@ -191,7 +192,7 @@ The Pi will now reboot and when it comes back on it should auto login in start t
 
 Congratulations! You have just built a very cheap and fast digital signage solution. Hook it up to a nice big TV and you are off!
 
-### Bonus step: Auto power off and on[](#bonus-step-auto-power-off-and-on)
+### Bonus step: Auto power off and on
 
 When I use this method to make digital signage I like to use the crontab to turn the display off and on using a schedule. Most modern TVs will go into standby mode when the HDMI source turns off, saving energy when your display is not in use.
 

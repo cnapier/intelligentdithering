@@ -24,7 +24,7 @@ My first PC had a 100Mhz CPU with 32MB of RAM and cost around £1000. This has a
 
 The Pi Zero uses the same BM2835 CPU as the original Raspberry Pi but has been overclocked to produce about 40% extra speed. It has also received a bump in memory to 512MB.
 
-## Raspberry Pi Zero: The Specs:[](#raspberry-pi-zero-the-specs)
+## Raspberry Pi Zero: The Specs:
 
 - A Broadcom BCM2835 application processor
     

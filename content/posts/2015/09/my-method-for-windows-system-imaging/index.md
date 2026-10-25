@@ -11,7 +11,7 @@ aliases:
 guid: "http://localhost:1313/my-method-for-windows-system-imaging/"
 ---
 
-In our school we use FOG as our imaging system [as I have mentioned before.](https://intelligentdithering.com/open-source-pc-imaging-with-fog/)
+In our school we use FOG as our imaging system [as I have mentioned before.](/posts/2015/08/open-source-pc-imaging-with-fog/)
 
 I like to keep a default image with an up to date installation of Windows 7 Pro, Office 2010 and other essential tools and utilities on it. Most of our smaller bits of software we push out to the machines using Group Policy.
 
@@ -31,7 +31,7 @@ I have found that this simple image will work on all of the machines in our netw
 
 This allows us to focus on other work. If it would take longer than 30 minutes to troubleshoot the issue, we just wipe the machine and it is sorted. Also gives the machine a clear out and the user that “new install” feeling.
 
-#### In summary[](#in-summary)
+#### In summary
 
 - Install Windows 7 in Audit mode on a Virtual Machine
 

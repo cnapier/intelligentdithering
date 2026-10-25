@@ -1,0 +1,25 @@
+{{- /*
+  Site override of the theme image hook.
+  The theme only set data-src (lazysizes), so without JavaScript – and for image
+  search – posts had no images at all. Use a real src with native lazy loading,
+  add width/height for page-bundle images (stops layout shift), and fall back to
+  the post title when the Markdown has no alt text.
+*/ -}}
+{{- $src := .Destination -}}
+{{- $res := false -}}
+{{- if not (urls.Parse $src).IsAbs -}}
+  {{- $res = or (.Page.Resources.GetMatch $src) (.Page.Resources.GetMatch (printf "**%s" (path.Base $src))) -}}
+{{- end -}}
+{{- $alt := .PlainText | default .Page.Title -}}
+<figure>
+  <a class="paragraph-image">
+    <img src="{{ with $res }}{{ .RelPermalink }}{{ else }}{{ $src | safeURL }}{{ end }}"
+      {{- with $res }}{{ if in (slice "jpeg" "png" "webp" "gif" "tiff" "bmp") .MediaType.SubType }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}{{ end }}
+      alt="{{ $alt }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async" data-action="zoom">
+  </a>
+  {{- with .Title }}
+  <figcaption class="image-caption">
+      {{- . | safeHTML -}}
+  </figcaption>
+  {{- end }}
+</figure>

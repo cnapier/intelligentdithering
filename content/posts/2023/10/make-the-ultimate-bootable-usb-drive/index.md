@@ -1,5 +1,6 @@
 ---
 title: "Make the ultimate bootable USB drive"
+description: "Make one bootable USB drive that holds all your ISOs – Windows installers, Linux distros and repair tools – using the free, open-source Ventoy."
 date: 2023-10-15
 categories: 
   - "guides"
@@ -27,7 +28,7 @@ Ventoy is basically a bootloader that goes onto a USB drive that allows you to e
 
 It lets you make a personalised USB Swiss army knife of all the tools you use most often.
 
-## Preparation to make the bootable USB drive[](#preparation-to-make-the-bootable-usb-drive)
+## Preparation to make the bootable USB drive
 
 What do we need to begin:
 
@@ -45,7 +46,7 @@ What do we need to begin:
       
     
 
-## Creating the bootable USB drive[](#creating-the-bootable-usb-drive)
+## Creating the bootable USB drive
 
 Once you have the Ventoy application downloaded, extract the files and run the file called Ventoy2Disk.exe
 
@@ -63,7 +64,7 @@ Now all you have to do is copy over your ISO files to that drive. It really is t
 
 If you need to update or add a new ISO file in the future, just plug the drive in and copy the files over. You do not need to run the Ventoy2Disk app again unless you wish to update the Ventoy boot loader (perhaps if they release updates to fix bugs on certain systems)
 
-## Using your new bootable USB drive[](#using-your-new-bootable-usb-drive)
+## Using your new bootable USB drive
 
 Once you have made the drive and copied over some ISO files now you just need to try it out.
 

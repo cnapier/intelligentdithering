@@ -1,5 +1,6 @@
 ---
 title: "DIY Whole Home Energy Monitoring with Home Assistant"
+description: "How I added whole-home electricity monitoring to an old analogue meter using a CT clamp, ESPHome and Home Assistant – for under £20."
 date: 2024-03-25
 categories: 
   - "guides"
@@ -14,15 +15,15 @@ aliases:
 guid: "http://localhost:1313/diy-whole-home-energy-monitoring-with-home-assistant/"
 ---
 
-- [Why energy monitoring?￼](#why-energy-monitoring)
+- [Why energy monitoring?](#why-energy-monitoring)
 - [Important warning](#important-warning)
-- [The Plan￼](#the-plan)
-- [The Parts￼](#the-parts)
-- [Prepare the sensor￼](#prepare-the-sensor)
-- [Install the sensor￼](#install-the-sensor)
-- [Conclusion￼](#conclusion)
+- [The Plan](#the-plan)
+- [The Parts](#the-parts)
+- [Prepare the sensor](#prepare-the-sensor)
+- [Install the sensor](#install-the-sensor)
+- [Conclusion](#conclusion)
 
-## Why energy monitoring?[](#why-energy-monitoring)
+## Why energy monitoring?
 
 I recently decided I wanted more data on our home energy usage. Unfortunately our meter box is over 20 years old and our energy supplier wont replace it until it is 30 years old. It is an old spinning disk style meter with analog display.
 
@@ -38,13 +39,13 @@ CT Clamps measure the magnetic field coming from an electrical cable. My measuri
 
 ![](images/electric-shock.gif)
 
-## The Plan[](#the-plan)
+## The Plan
 
 My plan is to build a small system using some pre-made circuit boards for this purpose. Then install ESPHome onto an ESP8266 chip to allow easy programming and connection with Home Assistant. Once it is all installed, I should be able to have a nice simple gauge on my Home Assistant dashboard showing the live energy usage in the house. Home Assistant will also graph this data historically to allow us to see patterns of use and perhaps adjust our behaviour to help reduce our energy costs.
 
 The parts should cost less that £20 ($25 USD).
 
-## The Parts[](#the-parts)
+## The Parts
 
 - [Wemos D1 Mini board with header pins ~£6](https://amzn.to/3IWuZJ3)
     
@@ -58,7 +59,7 @@ The parts should cost less that £20 ($25 USD).
 - [3D Printed Case (optional)](https://www.thingiverse.com/thing:3169243)
     
 
-## Prepare the sensor[](#prepare-the-sensor)
+## Prepare the sensor
 
 The first thing to do was to assemble the parts. This was pretty straightforward once I had the header pins soldered onto the Wemos D1 Mini. Just snap the two parts together and then connected it to my Mac via USB cable.
 
@@ -158,7 +159,7 @@ I ran a hairdryer on its medium setting and saw that it produced 4.4 amps on the
 
 So in the YAML file under the **calibrate linear** section I add 0 -> 0 and 0.028 -> 8.8. This will then allow the sensor to work out what to convert when taking reading. I should probably have put in more readings to help make it more accurate but for my needs this will suffice.
 
-## Install the sensor[](#install-the-sensor)
+## Install the sensor
 
 Happy that I had reasonably accurate readings it was now time to install the sensor. Luckily for me my power meter has the output cables easily accessible. It was simply a matter of installing the CT Clamp around one of the cables and then powering on the sensor.
 
@@ -174,7 +175,7 @@ Within minutes I had data flowing to Home Assistant. All that was left to do is 
 
 I chose to use the Gauge type widget for this and will adjust the markings of the green, yellow and red areas as I monitor our usage.
 
-## Conclusion[](#conclusion)
+## Conclusion
 
 This was a really fun little project. For under £20 I now have a gauge of how much energy we are using despite having an incredibly old analog power meter.
 

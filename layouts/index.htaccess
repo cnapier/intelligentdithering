@@ -1,0 +1,25 @@
+{{- /* Generated into public/.htaccess (see [outputFormats.htaccess] in config.toml). */ -}}
+ErrorDocument 404 /404.html
+
+# Old WordPress feed URLs -> Hugo feeds (permanent, so feed readers update the subscription)
+RedirectMatch 301 ^/feed/?$ /index.xml
+RedirectMatch 301 ^/feed/(rss|rss2|atom|rdf)/?$ /index.xml
+RedirectMatch 301 ^/category/([^/]+)/feed/?$ /categories/$1/index.xml
+RedirectMatch 301 ^/tag/([^/]+)/feed/?$ /tags/$1/index.xml
+
+# Old WordPress archive URLs -> Hugo taxonomy pages
+RedirectMatch 301 ^/category/([^/]+)/?$ /categories/$1/
+RedirectMatch 301 ^/tag/([^/]+)/?$ /tags/$1/
+
+# Old WordPress post URLs -> new post URLs.
+# Built from each page's `aliases`. Hugo also writes meta-refresh pages for these as a
+# fallback, but a real 301 passes ranking signals cleanly and is what Google prefers.
+{{ range site.Pages -}}
+{{- $to := .RelPermalink -}}
+{{- range .Aliases -}}
+{{- $from := . | strings.TrimSuffix "/" | replaceRE `([.+?()\[\]])` `\$1` -}}
+{{- if and $from (ne (printf "%s/" $from) $to) }}
+RedirectMatch 301 ^{{ $from }}/?$ {{ $to }}
+{{- end -}}
+{{- end -}}
+{{- end }}

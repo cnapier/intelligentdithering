@@ -6,7 +6,7 @@ themesDir = "themes/"
 
 copyright = "Intelligent Dithering 2026"
 paginate = 3
-languageCode = "en"
+locale = "en-GB"
 defaultContentLanguage = "en"
 
 hasCJKLanguage = true
@@ -24,7 +24,16 @@ shortname = "intelligentdithering"
 # would appear as unread to existing subscribers if included.
 limit = 5
 [outputs]
-home = ["HTML", "JSON", "RSS"]
+home = ["HTML", "JSON", "RSS", "htaccess"]
+
+# .htaccess is generated from layouts/index.htaccess so every WordPress alias gets a real 301
+[mediaTypes."text/htaccess"]
+suffixes = ["htaccess"]
+[outputFormats.htaccess]
+mediaType = "text/htaccess"
+baseName = ""
+isPlainText = true
+notAlternative = true
 
 # prevent build failures when using Hugo's template _internal/opengraph.html 
 [taxonomies]
@@ -64,7 +73,12 @@ weight = 50
 [params]
 author = "Colin"
 description = "Overthinking technology so you don't have to"
-keywords = "blog,developer,personal"
+# Used for the home page / fallback meta description (the tagline alone is too short for search results)
+seo_description = "Open source, automation and digital independence – practical guides on Raspberry Pi, Mac and iOS apps, home automation and school IT from a working sysadmin."
+# Default share image for pages with no image of their own (1200x630)
+og_image = "img/og-default.png"
+og_locale = "en_GB"
+html_lang = "en-GB"
 img_home = "img/home-bg-dither.png"
 img_404 = "img/404-bg.jpg"
 

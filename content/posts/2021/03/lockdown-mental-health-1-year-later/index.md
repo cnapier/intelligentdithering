@@ -15,7 +15,7 @@ guid: "http://localhost:1313/lockdown-mental-health-1-year-later/"
 
 ![Laptop with the words Mental Health on the screen ](images/image-1024x682.png)
 
-It has been exactly one year [since I wrote my post](https://intelligentdithering.com/improving-mental-health-during-troubling-times/) about ways to help with your mental health during troubling times. None of us could have predicted that a year on we would be in a similar position to the first Lockdown of 2020 ( I am dating these in case it becomes an annual fixture! ).
+It has been exactly one year [since I wrote my post](/posts/2020/03/improving-mental-health-during-troubling-times/) about ways to help with your mental health during troubling times. None of us could have predicted that a year on we would be in a similar position to the first Lockdown of 2020 ( I am dating these in case it becomes an annual fixture! ).
 
 Back in 2020 the idea that this would become a major issue was almost laughable at the start.
 
@@ -29,19 +29,19 @@ It didn’t seem like a huge issue until that night when the Prime Minister made
 
 But, here we are a year later. Still here. Still not in a padded cell. So things are OK. Here is a list of things I have found helpful over the last year. I intend that these will be a part of my daily life from now on.
 
-## Exercise[](#exercise)
+## Exercise
 
 I have been exercising more. Partly for mental health but mainly for physical health. Getting out for a walk or a run not only keep all the chemicals in balance but I find it helps with routine. Getting outside will be easier now too that the weather and light is starting to turn, so I expect that my mood will only improve from here.
 
-## Routine[](#routine)
+## Routine
 
 Critical. Cannot stress enough how important some form of routine is. I struggle during the holidays as I lose that routine of work and lose track of what day it is etc. It really messes with my head and I feel a bit disconnected and out of control. Trying to maintain a regular routine is a huge help with this. I have been lucky that I am considered a key worker and was still working throughout. Losing that routine for that length of time would have been a major problem for me, although I think I would have recognised this and tried to structure my days another way to compensate.
 
-## Downtime[](#downtime)
+## Downtime
 
 Having a young family, it feels like you are never off duty. When you finish work you are straight into dinner / bath / bed routine etc. Having even a few minutes to just sit and decompress is so important for mental health, more now than before even. And taking time off the usual chores to binge a box set, aimlessly browse YouTube, listen to some music is totally OK. _Taking time for yourself is not selfish_, because when you are well rested and in balance, you are a better person to everyone around you. Being kind to yourself in turn makes you kinder to others. Everyone wins.
 
-## Giving slack[](#giving-slack)
+## Giving slack
 
 This year has seen us go from paranoid and bleaching things to within an inch of their lives, afraid to go to the shop etc, to now a more measured approach as we have all had more time and data to appropriately weigh the risks and manage our behaviours. Masks are just a normal thing now, it doesn’t feel strange wearing them in public. The first time I went into the bank with my head shaved and a mask on was interesting to say the least, now no one bats an eye. We have all adjusted and found the groove.
 
@@ -49,7 +49,7 @@ Everyone has a different risk profile. A different set of rules they use to navi
 
 Everyone has a different home life setup. I have found that people are being more accommodating of each other and I really hope that this is a feature of the pandemic that we can hang on to.
 
-## Journalling / Diary for mental health[](#journalling--diary-for-mental-health)
+## Journalling / Diary for mental health
 
 This is something I have done on and off over the years but the last 6 months I have made it stick. I find it incredibly useful even though I thought it was a bit “hippy dippy” to start.
 
@@ -67,13 +67,13 @@ The last thing I do is have a little bar of 5 emojis from Super Happy to Sad. I 
 
 I have this all in a custom PDF template that I made. I may share it on here once I have ironed out a few of the rough edges!
 
-## Mindfulness[](#mindfulness)
+## Mindfulness
 
 This one has been a little harder to stick to but I still find it very useful. I especially like the [Netflix series from Headspace](https://www.netflix.com/gb/title/81280926) and found it a great re-introduction to Mindfulness. I would recommend you give it a go!
 
 Even just 5 minutes of sitting watching my breath gives my 100mph mind a chance to reset and slow down. I find this useful at the end of the day to switch off a bit. I will also use this if I feel myself getting tense and feel a panic attack coming on. A few minutes with eyes closed, turning down the sensory input just calms the storm.
 
-## Conclusion[](#conclusion)
+## Conclusion
 
 We have managed for a whole year. People thought they couldn’t cope with the initial 3 week lockdown that was announced almost a year ago. But here we are, one year, several extended lockdowns and God knows how many banana bread loaves later. We have adjusted and adapted and will continue to.
 

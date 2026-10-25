@@ -1,17 +1,10 @@
+# robots.txt – https://intelligentdithering.com
 #
-# robots.txt
-#
-# For more information about the robots.txt standard, see:
-# http://www.robotstxt.org/robotstxt.html
+# CSS, JS and images are deliberately NOT blocked: Google needs them to render
+# pages, and share/image-search crawlers need /img/ and post images.
+# No Crawl-delay: the old value (250s) throttled Bing/Yandex to ~345 URLs a day.
 
 User-agent: *
+Allow: /
+
 Sitemap: https://intelligentdithering.com/sitemap.xml
-Crawl-delay: 250
-Disallow: /css/
-Disallow: /fonts/
-Disallow: /img/
-Disallow: /js/
-Disallow: /sass/
-Disallow: /zoomjs/
-
-

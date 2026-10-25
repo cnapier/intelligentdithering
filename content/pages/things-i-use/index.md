@@ -1,7 +1,10 @@
 ---
 title: "Things I Use"
 date: 2025-02-18
-aliases: "/things-i-use"
+url: "/things-i-use/"
+aliases:
+  - "/pages/things-i-use/"
+description: "The software, services and kit I use and recommend – Mac and iOS apps, self-hosting, networking and maker gear."
 ---
 
 This is a running list of software, services and items I use and recommend. The Things I use page will be updated regularly.

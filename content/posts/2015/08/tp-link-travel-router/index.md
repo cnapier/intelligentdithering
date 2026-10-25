@@ -17,7 +17,7 @@ A travel router has been an item on my “to buy” list for some and I am now o
 
 ![](images/image.jpeg)
 
-### What is a travel router and why would you want one?[](#what-is-a-travel-router-and-why-would-you-want-one)
+### What is a travel router and why would you want one?
 
 A travel router is much like your BT HomeHub or similar router at home. It allows multiple wireless devices to connect to it to get internet access.
 
@@ -25,7 +25,7 @@ In hotels they tend to have wireless networks now. Why wouldn’t you just conne
 
 By using the travel router as the device you are registering with the system, you can connect it to the hotel WiFi and then your devices connect to the travel router. This makes all of your devices appear like a single device, thereby only requiring a single purchase!
 
-### So, is it any good and does it work?[](#so-is-it-any-good-and-does-it-work)
+### So, is it any good and does it work?
 
 Yes it works. I am currently typing this post on my laptop whilst my wife is using her iPhone and my in-laws in the next room are also connected on their phones and iPads and all under a single payment.
 
@@ -33,7 +33,7 @@ Also when I set the device up, I set up the personal wireless section of it wit
 
 And the best part is this little box of tricks is tiny , powered by USB and only costs around £25.
 
-### What else can it do?[](#what-else-can-it-do)
+### What else can it do?
 
 I am just using the device to connect to hotel WiFi. You can also plug in a 3G/4G dongle and share the connection from it to all your devices. This isn’t so useful to me personally as we have iPhones and they can do this via the Personal Hotspot feature.
 

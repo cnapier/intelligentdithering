@@ -24,7 +24,7 @@ Whether it is for a new dad, a dad-to-be or an old hand, these gifts will hopefu
 
 ## Raspberry Pi Starter Kit
 
-Mid-life crisis hits people differently, but a new hobby is usually on the cards. If they are interested in tech and tinkering, then a Raspberry Pi will open a whole world of possibilities for them. From [Home Automation](https://intelligentdithering.com/tag/home-automation/) to programming, robot building or just playing around with some LEDs anyone who likes to fidget and tinker will love this.
+Mid-life crisis hits people differently, but a new hobby is usually on the cards. If they are interested in tech and tinkering, then a Raspberry Pi will open a whole world of possibilities for them. From [Home Automation](/tags/home-automation/) to programming, robot building or just playing around with some LEDs anyone who likes to fidget and tinker will love this.
 
 ![Raspberry Pi Kit bundle as a Father's Day Gift](images/image-1024x1016.png)
 
@@ -32,7 +32,7 @@ Mid-life crisis hits people differently, but a new hobby is usually on the cards
 
 ## Home Assistant Green
 
-The Home Assistant / Nabu Case Green is a dedicated hardware device to run your Home Assistant software. As it is made by Nabu Casa, it is fully supported by them. It is one of the easiest and most reliable ways to get started on your Home Automation journey. I run my house on one of these and it hasn't missed a beat in over 9 months. It is what I connect my [DIY home energy monitoring](https://intelligentdithering.com/diy-whole-home-energy-monitoring-with-home-assistant/) project to.
+The Home Assistant / Nabu Case Green is a dedicated hardware device to run your Home Assistant software. As it is made by Nabu Casa, it is fully supported by them. It is one of the easiest and most reliable ways to get started on your Home Automation journey. I run my house on one of these and it hasn't missed a beat in over 9 months. It is what I connect my [DIY home energy monitoring](/posts/2024/03/diy-whole-home-energy-monitoring-with-home-assistant/) project to.
 
 ![](images/image-1-1024x1024.png)
 

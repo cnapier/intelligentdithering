@@ -84,6 +84,7 @@ $post-img-max-height: 420px;
 .post-container figure:not(.post-featured-image) img {
   display: block;
   width: auto;
+  height: auto; // width/height attributes are set for layout-shift; keep aspect ratio
   max-width: 100%;
   max-height: $post-img-max-height;
   margin: 0 auto;

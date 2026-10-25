@@ -15,7 +15,7 @@ guid: "http://localhost:1313/big-week-for-geeks/"
 
 It is set to be an exciting week for geeks. Tomorrow sees Apple holding their annual iPhone launch event and the Raspberry Pi foundation just launched their official 7 inch touch display for the Raspberry Pi.
 
-### Apple event[](#apple-event)
+### Apple event
 
 It is expected they will release a new iPhone, most likely a 6S, and the main new feature may be the new Force Touch technology first seen in the Apple Watch and the new trackpads on the Macbook and updated Macbook Pro. I am due an upgrade so I will be watching this one with special interest and credit card on hand.
 
@@ -27,7 +27,7 @@ There may be other surprises as well ( I am hoping for a super secret One More T
 
 I usually make a point of making up an ice cold pint of Coke and some of my epic geek sandwiches (ham, lettuce, mayo and Cool Original Doritos) for these keynotes but this time I will be watching this one with my 15 month old son. He needs to learn about technology early so I figure Apple Keynotes are as good a place as any. Let’s hope Tim Cook doesn’t rattle on about sales figures and “Customer Sat.” for too long at the start.
 
-### Raspberry Pi Screen[](#raspberry-pi-screen)
+### Raspberry Pi Screen
 
 The [Raspberry Pi Foundation](https://www.raspberrypi.org/blog/the-eagerly-awaited-raspberry-pi-display/) launched their long awaited official touch screen for the Raspberry Pi mini computer. It runs at 800 x 480 resolution, which isn’t massive, but on a 7 inch screen with 10 points of touch sensing it would be more than capable for a range of projects.
 
