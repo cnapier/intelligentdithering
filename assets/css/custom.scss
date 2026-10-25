@@ -238,6 +238,13 @@ a.external:hover::after {
   min-height: 60px;
   text-align: center;
 }
+// The page declares color-scheme "light dark", the Disqus iframe declares nothing.
+// When those differ (dark mode) browsers paint the iframe with an opaque white
+// canvas instead of leaving it transparent. Matching the iframe's own scheme
+// keeps it transparent so Disqus's dark theme sits on the page background.
+#disqus_thread iframe {
+  color-scheme: light;
+}
 
 // ---------------------------------------------------------------------------
 // Accessibility fixes from Lighthouse
@@ -701,6 +708,10 @@ $dm-link-hover: #9ae3e8;
   // --- Comments placeholder -------------------------------------------------
   .comments-lazy {
     color: $dm-muted;
+  }
+  // Disqus picks light/dark from this element's text colour when it loads
+  #disqus_thread {
+    color: $dm-text;
   }
 
   // 404 page: footer sits on top of the full-screen photo, so keep it white

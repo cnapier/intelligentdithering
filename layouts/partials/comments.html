@@ -30,6 +30,18 @@
     s.async = true;
     (document.head || document.body).appendChild(s);
   }
+  // Disqus only reads the colour scheme when it loads, so reload the thread
+  // if the reader's system switches between light and dark with the page open.
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange = function () {
+      if (loaded && window.DISQUS) {
+        window.DISQUS.reset({ reload: true, config: window.disqus_config });
+      }
+    };
+    if (mq.addEventListener) mq.addEventListener("change", onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  }
   document.getElementById("disqus_load").addEventListener("click", load);
   if (location.hash.indexOf("#comment") === 0 || location.hash === "#disqus_thread") { load(); return; }
   if ("IntersectionObserver" in window) {
