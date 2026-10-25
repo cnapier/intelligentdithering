@@ -2,29 +2,23 @@
 title: "Cheap DIY 8 Port IP KVM on a budget"
 description: "Build a cheap 8-port IP KVM with a Raspberry Pi 4, PiKVM and an off-the-shelf HDMI KVM switch – the parts list, setup steps and fixes."
 date: 2025-01-31
-categories: 
+categories:
   - "guides"
-tags: 
-  - "guides"
-  - "open-source"
+tags:
   - "raspberry-pi"
   - "sysadmin"
+  - "open-source"
+  - "maker"
 coverImage: "kvmswitch.webp"
 aliases:
-  - "/8-port-ip-kvm-on-a-budget/"
+  - "/posts/2025/01/8-port-ip-kvm-on-a-budget/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/8-port-ip-kvm-on-a-budget/"
 ---
 
 _Building a cheap IP KVM using open source software and Raspberry Pi_
 
-- [DIY IP KVM Parts](#parts)
-- [Step 1: Fit the KVM Switch](#step-1-fit-the-kvm-switch)
-- [Step 2: Setup and connect PiKVM](#step-2-setup-and-connect-pikvm)
-- [Step 3: Reverse engineer the control box!](#step-3-reverse-engineer-the-control-box)
-    - [/usr/bin/local/kvm.py](#usrbinlocalkvmpy)
-    - [/etc/kvmd/override.yaml](#overrideyaml)
-- [Conclusion](#conclusion)
+{{< toc >}}
 
 We recently had a small server outage in work. Nothing mission critical, it was over a weekend and coming up to Christmas holidays. It could wait, but that little itch in my brain couldn’t let it sit. I tried several remote remedies to bring it back online but it needed physical access. It had to wait until Monday.
 
@@ -58,7 +52,7 @@ However it was at this point I noticed what could have been a show stopper. Most
 
 ## Step 2: Setup and connect PiKVM
 
-This step is well documented at the [PiKVM website](https://pikvm.org). Basically download the appropriate image for your Raspberry Pi it will be hosted on (I used [a Pi4](/posts/2023/09/raspberry-pi-5-announced/)), flash it to an SD card, boot the Pi and then SSH in to configure some options.
+This step is well documented at the [PiKVM website](https://pikvm.org). Basically download the appropriate image for your Raspberry Pi it will be hosted on (I used [a Pi4](/raspberry-pi-5-announced/)), flash it to an SD card, boot the Pi and then SSH in to configure some options.
 
 You will also need to connect the WaveShare HDMI capture device to the CSI port on the Pi and connect the HDMI output from the KVM switch to the Pi.
 
@@ -205,7 +199,7 @@ The bottom section labelled “view” creates a new button in the top menu of P
 
 Then I cut open an old Mini-USB cable and exposed the data lines. You do not need the red or black power lines. I soldered on DuPont connectors and attached the data lines to pins 23 and 24 on the Pi GPIO pins.
 
-![](images/IMG_2583.jpeg)
+![Close up photo of wires connected to Raspberry Pi GPIO pins](images/IMG_2583.jpeg)
 
 I then tested the switching using the kvm.py script above from the command line. Bingo!
 

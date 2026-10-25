@@ -8,3 +8,6 @@
 
 # Local working notes
 /Claude outputs/
+
+# Python
+__pycache__/

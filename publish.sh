@@ -33,7 +33,7 @@ warn()  { printf '\033[33m!\033[0m %s\n' "$*"; }
 die()   { printf '\033[31m✘ %s\033[0m\n' "$*" >&2; exit 1; }
 ask()   { [ "$ASSUME_YES" = 1 ] && return 0; printf '%s [y/N] ' "$1"; read -r a; [ "$a" = y ] || [ "$a" = Y ]; }
 fm()    { { grep -m1 "^$2:" "$1" || true; } | sed -E "s/^$2:[[:space:]]*//; s/^[\"']//; s/[\"'][[:space:]]*\$//"; }
-post_url() { local p="${1#content/}"; p="${p%index.md}"; echo "$SITE_URL/$p"; }
+post_url() { echo "$SITE_URL/$(basename "$(dirname "$1")")/"; }   # posts are served at /<slug>/
 
 command -v git  >/dev/null || die "git not found"
 command -v hugo >/dev/null || die "hugo not found (brew install hugo)"

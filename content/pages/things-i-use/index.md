@@ -27,7 +27,7 @@ More and more new sites are geo-blocking content. NordVPN allows me to quickly a
 
 [**Accidental Tech Podcast**](https://atp.fm/)
 
-Three nerds discussing tech, Apple, programming, and loosely related matters. Hosted by [Marco Arment](https://marco.org/), [Casey Liss](https://www.caseyliss.com/), and [John Siracusa](http://hypercritical.co/).
+Three nerds discussing tech, Apple, programming, and loosely related matters. Hosted by [Marco Arment](https://marco.org/), [Casey Liss](https://www.caseyliss.com/), and [John Siracusa](https://hypercritical.co/).
 
 
 ## Websites / Services
@@ -36,6 +36,6 @@ Three nerds discussing tech, Apple, programming, and loosely related matters. Ho
 
 For my email I use FastMail. Rock solid, loads of amazing features including masked email for signing up to new sites you think might spam you. Can’t recommend it highly enough. You can get 10% off your first year by [using this link](https://ref.fm/u20028688)
 
-[**IONOS for web hosting / Virtual Private Servers**](http://aklam.io/tDQGIr)
+[**IONOS for web hosting / Virtual Private Servers**](https://aklam.io/tDQGIr)
 
-This site is hosted with [IONOS](http://aklam.io/tDQGIr). I have found their VPS (Virtual Private Server) offering to be great value, especially when it comes with Plesk Web Host edition FREE! So many tools to manage your virtual server with performance boosts, virus scanning etc. And it was all cheaper than my previous host that I had to manage via command line!
+This site is hosted with [IONOS](https://aklam.io/tDQGIr). I have found their VPS (Virtual Private Server) offering to be great value, especially when it comes with Plesk Web Host edition FREE! So many tools to manage your virtual server with performance boosts, virus scanning etc. And it was all cheaper than my previous host that I had to manage via command line!

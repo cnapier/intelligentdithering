@@ -1,14 +1,13 @@
 ---
 title: "Improving mental health during troubling times"
+description: "Practical things that help me look after my mental health in stressful times – mindfulness, a news and social media diet, exercise and talking."
 date: 2020-03-19
-categories: 
-  - "guides"
-  - "mental-health"
-tags: 
-  - "guides"
-  - "mental-health"
+categories:
+  - "personal"
+tags:
+  - "wellbeing"
 aliases:
-  - "/improving-mental-health-during-troubling-times/"
+  - "/posts/2020/03/improving-mental-health-during-troubling-times/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/improving-mental-health-during-troubling-times/"
 ---
@@ -33,30 +32,16 @@ I would recommend writing on the sheet using an Apple Pencil or with pen and pap
 
 For this you can use any of the following:
 
-- 
-    
-    Breathe app on Apple Watch
+- Breathe app on Apple Watch
     
       
     
 
-- 
-    
-    [Smiling Mind](https://www.smilingmind.com.au) (iOS, Android)
-    
-      
+- [Smiling Mind](https://www.smilingmind.com.au) (iOS, Android)
     
 
-- 
-    
-    [Stop, Breathe and Think](https://www.stopbreathethink.com) (iOS, Android)
-    
-      
-    
 
-- 
-    
-    [Headspace](https://www.headspace.com/)
+- [Headspace](https://www.headspace.com/)
     
       
     

@@ -16,7 +16,8 @@
 
 {{- /* ---------- Title ---------- */ -}}
 {{- $name := .Title -}}
-{{- if or (eq .Kind "term") (eq .Kind "taxonomy") -}}
+{{- if and (or (eq .Kind "term") (eq .Kind "taxonomy")) (or (in .Title "-") (eq .Title (lower .Title))) -}}
+  {{- /* term with no content/<taxonomy>/<term>/_index.md title: "raspberry-pi" -> "Raspberry Pi" */ -}}
   {{- $name = .Title | replaceRE "[-_]" " " | title -}}
 {{- end -}}
 {{- $title := site.Title -}}
@@ -85,6 +86,8 @@
     {{- if in (slice "jpeg" "png" "webp" "tiff" "bmp") .MediaType.SubType -}}
       {{- $og := . -}}
       {{- if gt .Width 1200 -}}{{- $og = .Resize "1200x q85" -}}{{- end -}}
+      {{- /* Not every social network reads WebP share images, so hand them a JPEG copy */ -}}
+      {{- if eq $og.MediaType.SubType "webp" -}}{{- $og = $og.Process "jpg q85" -}}{{- end -}}
       {{- $img = $og.Permalink -}}{{- $imgW = $og.Width -}}{{- $imgH = $og.Height -}}
     {{- else -}}
       {{- $img = .Permalink -}}

@@ -1,0 +1,14 @@
+{{- /*
+  Site override of the theme link hook.
+  The theme ran every link through relURL, which turned in-page anchors like
+  #soldering-iron-kit into /#soldering-iron-kit – a link to the home page – so
+  every table of contents on the site was broken. Anchors and query-only links
+  are now left alone; external links still open in a new tab.
+*/ -}}
+{{- $dest := .Destination -}}
+{{- $isExternal := or (hasPrefix $dest "http://") (hasPrefix $dest "https://") -}}
+{{- if not (or $isExternal (hasPrefix $dest "#") (hasPrefix $dest "?") (hasPrefix $dest "mailto:") (hasPrefix $dest "tel:")) -}}
+  {{- $dest = $dest | relURL -}}
+{{- end -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- /* no trailing newline */ -}}

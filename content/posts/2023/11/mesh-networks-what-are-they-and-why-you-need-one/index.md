@@ -5,9 +5,9 @@ date: 2023-11-08
 categories:
   - "guides"
 tags:
-  - "sysadmin"
+  - "networking"
 aliases:
-  - "/mesh-networks-what-are-they-and-why-you-need-one/"
+  - "/posts/2023/11/mesh-networks-what-are-they-and-why-you-need-one/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/mesh-networks-what-are-they-and-why-you-need-one/"
 ---
@@ -16,15 +16,9 @@ You may have heard of or seen “mesh networks” mentioned on the Internet.  W
 
 Well today we are going to answer those questions and convince you that you need one at home!
 
-- [What problem do mesh networks solve?](#what-problem-do-mesh-networks-solve)
-- [How do mesh networks help me?](#how-do-mesh-networks-help-me)
-- [Mesh networks to the rescue!](#mesh-networks-to-the-rescue)
-- [Extra benefits of mesh networks](#extra-benefits-of-mesh-networks)
-- [Pro tips](#pro-tips)
-    - [Naming the network](#naming-the-network)
-    - [Disable the ISP router Wi-FI](#disable-the-isp-router-wi-fi)
+{{< toc >}}
 
-![mesh networks covering a home ](images/image.png)
+![mesh networks covering a home ](images/image.webp)
 
 ## What problem do mesh networks solve?
 

@@ -1,39 +1,30 @@
 ---
 title: "Raspberry Pi 5 Announced"
+description: "The Raspberry Pi 5 is here: a 2–3x faster CPU, dual 4K displays, PCI Express, a real-time clock and finally a power button. Everything that's new."
 date: 2023-09-28
-categories: 
+categories:
   - "news"
-  - "recommended"
-tags: 
+tags:
   - "raspberry-pi"
 aliases:
-  - "/raspberry-pi-5-announced/"
+  - "/posts/2023/09/raspberry-pi-5-announced/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/raspberry-pi-5-announced/"
 ---
 
-The [Raspberry Pi Trading Company](https://www.raspberrypi.com/news/introducing-raspberry-pi-5/) have just announced the Raspberry Pi 5 and it is available to pre-order now, shipping in late October. Of course they announced this less than 24 hours after I [wrote a post about using the Raspberry Pi 4 for Digital Signage](/posts/2023/09/free-digital-signage-with-raspberry-pi-and-google-slides/)! This new Pi will be even better for that as you will be able to run two 4K screens at once with it!
+The [Raspberry Pi Trading Company](https://www.raspberrypi.com/news/introducing-raspberry-pi-5/) have just announced the Raspberry Pi 5 and it is available to pre-order now, shipping in late October. Of course they announced this less than 24 hours after I [wrote a post about using the Raspberry Pi 4 for Digital Signage](/free-digital-signage-with-raspberry-pi-and-google-slides/)! This new Pi will be even better for that as you will be able to run two 4K screens at once with it!
 
 So what is new and exciting in this updated single board computer? Read on to find out!
 
-![](images/image.png)
+![Raspberry Pi 5 board viewed from above, showing the GPIO header, USB and Ethernet ports and dual micro HDMI](images/image.png)
 
-- [CPU - 2-3x faster](#cpu---2-3x-faster)
-- [GPU Updated](#gpu-updated)
-- [USB bandwidth doubled](#usb-bandwidth-doubled)
-- [MicroSD slot twice as fast](#microsd-slot-twice-as-fast)
-- [PCI-Express!!!](#pci-express)
-- [Dual camera / display slots](#dual-camera--display-slots)
-- [Raspberry Pi 5 gets a POWER BUTTON!!](#raspberry-pi-5-gets-a-power-button)
-- [Real-time Clock](#real-time-clock)
-- [Others](#others)
-- [Conclusion](#conclusion)
+{{< toc >}}
 
 ## CPU - 2-3x faster
 
 The CPU has been replaced with a new Broadcom BCM2712 64-bit quad core ARM Cortex-A76 processor that is between 2 and 3 times faster than the one on the Pi 4. This will be a noticeable boost in performance for all users.
 
-![](images/image-1-1024x687.png)
+![Close-up of the Broadcom BCM2712 processor on the Raspberry Pi 5 board](images/image-1-1024x687.webp)
 
 ## GPU Updated
 
@@ -63,7 +54,7 @@ This might be the biggest FINALLY of all! They have added a power button to the 
 
 The board also has a built in RTC which you can power with a two pin connector to a coin cell battery. This is fantastic for projects that require time and date but may not have Internet access to set the clock on each boot. Very welcome addition.
 
-![](images/image-2-1024x683.png)
+![Coin cell battery with a two-pin connector cable for the Raspberry Pi 5 real-time clock](images/image-2-1024x683.webp)
 
 ## Others
 

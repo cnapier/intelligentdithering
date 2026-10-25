@@ -55,11 +55,14 @@ $thumb-gap: 20px;
   }
 }
 
-// Shorter home/list page header (theme default is 150px top and bottom)
+// Shorter home/list page header (theme default is 150px top and bottom).
+// The menu bar (~56-60px) sits over the top of the header image, so the top
+// padding includes the bar's height – that keeps the title centred in the
+// part of the image you can actually see below the bar.
 .intro-header .site-heading {
-  padding: 80px 0 35px;
+  padding: 96px 0 41px;
   @media only screen and (min-width: 768px) {
-    padding: 95px 0 60px;
+    padding: 117px 0 58px;
     h1 {
       font-size: 60px;
     }
@@ -88,4 +91,67 @@ $post-img-max-height: 420px;
   max-width: 100%;
   max-height: $post-img-max-height;
   margin: 0 auto;
+}
+
+// ---------------------------------------------------------------------------
+// Solid menu bar. The theme's transparent menu was hard to read over the
+// dithered circuit-board header, so give it a dark translucent bar that
+// matches the header palette. Applies at the top of the page and in the
+// theme's "scroll up to reveal" fixed state, and on pages without a header
+// image (the theme's .invert style) so the menu looks the same everywhere.
+// ---------------------------------------------------------------------------
+$nav-bar-bg: rgba(10, 22, 40, 0.88);
+$nav-bar-accent: #3fc1c9; // teal from the header image
+$nav-bar-link: #ffffff;
+$nav-bar-link-hover: #7fdde2;
+
+.navbar-custom,
+.navbar-custom.invert,
+.navbar-custom.is-fixed {
+  background: $nav-bar-bg;
+  border-bottom: 1px solid rgba(63, 193, 201, 0.35);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  .navbar-brand,
+  .navbar-brand:focus {
+    color: $nav-bar-link;
+  }
+  .navbar-brand:hover {
+    color: $nav-bar-link-hover;
+  }
+
+  .navbar-toggle .icon-bar {
+    background-color: $nav-bar-link;
+  }
+  .navbar-toggle:active,
+  .navbar-toggle:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @media only screen and (min-width: 768px) {
+    .nav li a,
+    .nav li a:focus {
+      color: $nav-bar-link;
+    }
+    .nav li a:hover {
+      color: $nav-bar-link-hover;
+    }
+  }
+}
+
+// Desktop: the theme's fixed state is white at 90%; keep it dark instead.
+@media only screen and (min-width: 1170px) {
+  .navbar-custom.is-fixed {
+    background-color: $nav-bar-bg;
+    border-bottom-color: rgba(63, 193, 201, 0.35);
+  }
+}
+
+// Mobile: the dropdown menu stays a white card, so keep its links dark.
+@media only screen and (max-width: 767px) {
+  .navbar-custom .navbar-collapse .nav li a {
+    color: #404040;
+  }
 }

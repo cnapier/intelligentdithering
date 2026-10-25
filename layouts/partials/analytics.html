@@ -1,6 +1,17 @@
-{{- /* GoatCounter (cookieless analytics). Skipped when running `hugo server`. */ -}}
+{{- /* GoatCounter (cookieless analytics). Skipped when running `hugo server`.
+       On the 404 page the hit is recorded as /404/<missing path>, so broken
+       incoming links show up in GoatCounter grouped under /404/, with the
+       referring site listed under Referrers. */ -}}
 {{- with site.Params.goatcounter.code -}}
 {{- if not hugo.IsServer }}
+{{- if eq $.Kind "404" }}
+<script>
+  window.goatcounter = {
+    path: function (p) { return "/404" + location.pathname + location.search; },
+    title: "404 Not Found",
+  };
+</script>
+{{- end }}
 <script data-goatcounter="https://{{ . }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 {{- end -}}
 {{- end -}}

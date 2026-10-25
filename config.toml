@@ -36,6 +36,11 @@ isPlainText = true
 notAlternative = true
 
 # prevent build failures when using Hugo's template _internal/opengraph.html 
+# Posts live in content/posts/YYYY/MM/<slug>/ but are served at /<slug>/ –
+# the same "pretty permalink" URLs the WordPress site used.
+[permalinks]
+posts = "/:contentbasename/"
+
 [taxonomies]
 category = "categories"
 tag = "tags"
@@ -48,6 +53,12 @@ guessSyntax = true
 lineNos = true
 lineNumbersInTable = false
 style = "dracula"
+
+# {{< toc >}} in a post builds its table of contents from the ## and ### headings
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+ordered = false
 
 [markup.goldmark.renderer]
 unsafe = true

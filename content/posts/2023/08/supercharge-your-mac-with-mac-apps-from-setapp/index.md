@@ -2,14 +2,13 @@
 title: "Supercharge your Mac with Mac Apps from SetApp"
 description: "5 Mac apps I use every day from Setapp's 240+ app subscription, and whether the monthly price is worth it for a power user."
 date: 2023-08-12
-categories: 
+categories:
   - "recommended"
-tags: 
+tags:
   - "mac"
-  - "recommended"
-  - "setapp"
+  - "apps"
 aliases:
-  - "/supercharge-your-mac-with-mac-apps-from-setapp/"
+  - "/posts/2023/08/supercharge-your-mac-with-mac-apps-from-setapp/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/supercharge-your-mac-with-mac-apps-from-setapp/"
 ---
@@ -24,7 +23,7 @@ Anyway, here are five Mac apps that I use every day that I couldn’t live witho
 
 ### Core Shell
 
-Core Shell is a powerful terminal emulator designed specifically for macOS. It offers a user-friendly interface with advanced features such as SSH key management, multiple sessions, and customizable themes. I manage multiple Linux servers and having them all a click away in Core Shell is super convenient. I also use this to manage our [DIY open source digital signage](/posts/2023/09/free-digital-signage-with-raspberry-pi-and-google-slides/) systems.  
+Core Shell is a powerful terminal emulator designed specifically for macOS. It offers a user-friendly interface with advanced features such as SSH key management, multiple sessions, and customizable themes. I manage multiple Linux servers and having them all a click away in Core Shell is super convenient. I also use this to manage our [DIY open source digital signage](/free-digital-signage-with-raspberry-pi-and-google-slides/) systems.  
 
 ![Core Shell is one of my most used Mac apps](images/image-4-1024x677.png)
 
@@ -32,7 +31,7 @@ Core Shell is a powerful terminal emulator designed specifically for macOS. It o
 
 Paste is a handy clipboard manager that helps you organize and access your copied items. It automatically saves everything you copy, including text, images, and links, allowing you to retrieve them later when needed. With a clean and intuitive interface, Paste makes it effortless to find and paste previously copied content, ultimately boosting productivity and eliminating the need to constantly switch between applications. Especially useful when copying and pasting masses of data between spreadsheets, it reduces the time taken massively.
 
-![](images/image-5-1024x640.png)
+![Paste clipboard manager open along the bottom of the Mac screen, showing a row of recently copied text, links and images](images/image-5-1024x640.webp)
 
 ### Better Touch Tool
 

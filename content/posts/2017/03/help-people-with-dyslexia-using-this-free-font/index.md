@@ -1,13 +1,14 @@
 ---
 title: "Help people with dyslexia using this free font"
+description: "OpenDyslexic is a free font designed to make letters easier to tell apart for readers with dyslexia. How we use it on school iPads and computers."
 date: 2017-03-06
-categories: 
+categories:
   - "guides"
-tags: 
-  - "dyslexia"
+tags:
+  - "education"
   - "ios"
 aliases:
-  - "/help-people-with-dyslexia-using-this-free-font/"
+  - "/posts/2017/03/help-people-with-dyslexia-using-this-free-font/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/help-people-with-dyslexia-using-this-free-font/"
 ---
@@ -16,9 +17,9 @@ Just a quick post today to draw attention to something we have used for a while 
 
 A few years ago I came across a student that was considering using a laptop instead of the iPad. I was keen to know why and it transpired that they had dyslexia and found using the on-screen keyboard difficult. It was slowing them down and they preferred a hardware keyboard.
 
-So first thing we did was give them a Bluetooth keyboard to try out. It helped straight away to speed things up and give a slight boost in confidence with the iPad again. While I was showing them how to use the keyboard I decided to try out this font I had heard about called [OpenDyslexic](http://opendyslexic.org/).
+So first thing we did was give them a Bluetooth keyboard to try out. It helped straight away to speed things up and give a slight boost in confidence with the iPad again. While I was showing them how to use the keyboard I decided to try out this font I had heard about called [OpenDyslexic](https://opendyslexic.org/).
 
-![](images/image.png)
+![iPad keyboard keys shown in the OpenDyslexic font, with heavier-weighted bottoms to make letters easier to tell apart](images/image.png)
 
 It is a free font designed to help people with Dyslexia. (I have always found it strange that for people with trouble spelling the name for it is so bloody hard to spell! Also in this category is the word for people with a fear of long words - hippopotomonstrosesquipedaliophobia. That is just savage!)
 

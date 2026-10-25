@@ -2,23 +2,20 @@
 title: "Brain dump fast with this free iOS Shortcut"
 description: "Get everything out of your head and into Things fast with Brain Dumper, a free iOS Shortcut for capturing tasks by voice when overwhelm hits."
 date: 2023-10-22
-categories: 
+categories:
   - "guides"
-tags: 
+tags:
   - "ios"
-  - "shortcuts"
-  - "task-management"
+  - "productivity"
 aliases:
-  - "/dump-your-brain-fast-with-this-free-ios-shortcut/"
+  - "/posts/2023/10/dump-your-brain-fast-with-this-free-ios-shortcut/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/dump-your-brain-fast-with-this-free-ios-shortcut/"
 ---
 
-![brain dump into your phone](images/image.png)
+![brain dump into your phone](images/image.webp)
 
-- [Introduction](#introduction)
-- [So how do we combat Messy Brain / overwhelm?](#so-how-do-we-combat-messy-brain--overwhelm)
-- [Enter the Brain Dumper iOS shortcut!](#enter-the-brain-dumper-ios-shortcut)
+{{< toc >}}
 
 ## Introduction
 
@@ -26,7 +23,7 @@ Get things out of your head and into your task manager FAST with this free iOS s
 
 I use my devices for everything. My iPhone is always at hand and I am never far from my iPad or Mac. Having my to-do list all in one place that I can access at any time is critical for me to function.
 
-With my [particular cocktail of mental disorders](/posts/2020/03/improving-mental-health-during-troubling-times/) I find that sometimes I can get a serious feeling of overwhelm. My wife calls this “Messy Brain”, and it’s pretty obvious when it is happening to me. I tend to dull down, withdraw, get even more introverted than normal and just feel totally “meh”.
+With my [particular cocktail of mental disorders](/improving-mental-health-during-troubling-times/) I find that sometimes I can get a serious feeling of overwhelm. My wife calls this “Messy Brain”, and it’s pretty obvious when it is happening to me. I tend to dull down, withdraw, get even more introverted than normal and just feel totally “meh”.
 
 The human brain’s working memory can really only hold around [7 items (plus or minus 2)](https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two#:~:text=It%20was%20written%20by%20the,memory%20is%207%20%c2%b1%202.) at a time before it runs into problems. This is not ideal for holding a task list of 30 or 40 things you need to do. Inevitably you will forget them: as another item gets added to the list, one drops off the end. But the brain still remembers that there WAS something on that list. You don’t know what you have forgotten but you DO get the horrible dread that you are going to drop the ball. That’s when Messy Brain kicks in.
 
@@ -88,7 +85,7 @@ The conversation flow is more like this now:
 
 You can see this is a much faster interaction, both in the adding of a single task and the fact it asks repeatedly for more tasks until you say “Stop”.
 
-![](images/image-1-1024x664.png)
+![The Brain Dumper shortcut open in the Shortcuts editor, showing the speak, repeat and Create To-Do in Things actions](images/image-1-1024x664.png)
 
 Once you have downloaded the shortcut you can customise the spoken prompts and the task app that you prefer, just swap out the Things block for the app you use. For example I duplicated this Shortcut and changed the target app to Reminders, and we use that to quickly add a list of items to our family shared Shopping List in Reminders. This means you can open the kitchen cupboards and just shout ingredients to your phone to get the list entered quickly. It is a game changer!
 

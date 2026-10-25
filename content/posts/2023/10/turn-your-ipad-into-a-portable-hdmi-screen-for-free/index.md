@@ -1,15 +1,15 @@
 ---
 title: "Turn your iPad into a portable HDMI screen for free"
+description: "Use the free Orion app and a cheap USB HDMI capture card to turn your iPad into a portable monitor for a Raspberry Pi, games console or headless server."
 date: 2023-10-08
-categories: 
+categories:
   - "guides"
-  - "recommended"
-tags: 
-  - "apps"
+tags:
   - "ios"
-  - "recommended"
+  - "apps"
+  - "raspberry-pi"
 aliases:
-  - "/turn-your-ipad-into-a-portable-hdmi-screen-for-free/"
+  - "/posts/2023/10/turn-your-ipad-into-a-portable-hdmi-screen-for-free/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/turn-your-ipad-into-a-portable-hdmi-screen-for-free/"
 ---
@@ -31,7 +31,7 @@ I discovered this app this week from John Gruber on [Daring Fireball.](https://d
 
 To get set up all you need is to download the [Orion app from the iOS App Store](https://apps.apple.com/us/app/hdmi-monitor-orion/id6459355072) and then connect up your source.
 
-To do this I used a cheap [USB HDMI](/posts/2020/08/8-hdmi-capture-stick-must-have-kit/) [](https://amzn.to/45mcAyq)[capture card](https://amzn.to/3QwFPdD) from Amazon and a USB-C adaptor. Simply plug this into the iPad, fire up Orion and then turn on your source device. I have made a quick YouTube video showing this process for connecting to a [Raspberry Pi](https://amzn.to/3tsVHF2).
+To do this I used a cheap [USB HDMI](/8-hdmi-capture-stick-must-have-kit/) [capture card](https://amzn.to/3QwFPdD) from Amazon and a USB-C adaptor. Simply plug this into the iPad, fire up Orion and then turn on your source device. I have made a quick YouTube video showing this process for connecting to a [Raspberry Pi](https://amzn.to/3tsVHF2).
 
 {{< youtube id="5wEmAnpd37E" >}}
 

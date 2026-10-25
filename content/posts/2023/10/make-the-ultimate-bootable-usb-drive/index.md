@@ -2,21 +2,20 @@
 title: "Make the ultimate bootable USB drive"
 description: "Make one bootable USB drive that holds all your ISOs – Windows installers, Linux distros and repair tools – using the free, open-source Ventoy."
 date: 2023-10-15
-categories: 
+categories:
   - "guides"
-tags: 
-  - "open-source"
+tags:
   - "sysadmin"
-  - "tools"
+  - "open-source"
 aliases:
-  - "/make-the-ultimate-bootable-usb-drive/"
+  - "/posts/2023/10/make-the-ultimate-bootable-usb-drive/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/make-the-ultimate-bootable-usb-drive/"
 ---
 
 _Creating a USB Swiss army knife full of tech tools for all your geeky needs_
 
-![](images/image-2-1024x682.png)
+![Photo of a laptop with a USB drive plugged in](images/image-2-1024x682.webp)
 
 Today we are going to make the ultimate bootable USB drive to have with you at all times. This is an invaluable tool and it is all made possible by the Open Source tool [Ventoy](https://ventoy.net).
 
@@ -52,7 +51,7 @@ Once you have the Ventoy application downloaded, extract the files and run the f
 
 You will get a window like the one below.
 
-![](images/image-3.png)
+![The Ventoy user interface](images/image-3.png)
 
 Choose your bootable USB drive in the dropdown and **double check to make sure it is the right one**. This tool will destroy all data on the drive so be very sure at this stage!
 
@@ -70,7 +69,7 @@ Once you have made the drive and copied over some ISO files now you just need to
 
 Plug the drive into a computer and turn it on. If the computer is set to boot from USB drives, the Ventoy boot window will appear. If not you may have to press the appropriate key to bring up the boot menu on your computer (typically one of the top row function keys)
 
-![](images/image-4-1024x574.png)
+![Ventoy boot screen listing several options](images/image-4-1024x574.png)
 
 When the Ventoy window appears, simply choose the ISO you wish to boot from and hit Return. It really is that easy!
 

@@ -4,14 +4,19 @@
     tools/seo-check.py                 # drafts + posts changed since origin/main
     tools/seo-check.py --all           # every post
     tools/seo-check.py content/posts/2025/07/foo/index.md ...
+    tools/seo-check.py --links         # also fetch every external link (slow, needs internet)
+    tools/seo-check.py --all --links   # ...across every post
 
 Prints ERROR / WARN / OK per post. Exit code 1 if any ERROR (missing image,
-empty title, archetype placeholder left in), otherwise 0 - warnings never fail.
+empty title, archetype placeholder left in, dead link with --links),
+otherwise 0 - warnings never fail.
 """
 import os
 import re
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_HOST = "intelligentdithering.com"
@@ -61,6 +66,20 @@ def fm_list(fm, key):
     return [v for v in vals if v]
 
 
+def heading_id(text):
+    """Hugo's default (GitHub-style) heading ID: plain text, lowercase, punctuation dropped, spaces -> '-'."""
+    t = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", r"\1", text)   # links/images -> text
+    t = re.sub(r"<[^>]+>|[`*_~]", "", t).lower()
+    t = re.sub(r"[^\w\- ]", "", t)
+    return t.replace(" ", "-")
+
+
+def allowed_terms(kind):
+    """Tags/categories that have a content/<kind>/<term>/_index.md page (the agreed list)."""
+    d = os.path.join(ROOT, "content", kind)
+    return {t for t in os.listdir(d) if os.path.isfile(os.path.join(d, t, "_index.md"))} if os.path.isdir(d) else set()
+
+
 def strip_code(body):
     body = re.sub(r"```.*?```", "", body, flags=re.S)
     return re.sub(r"`[^`\n]*`", "", body)
@@ -85,6 +104,8 @@ def known_post_urls():
         if "index.md" not in files:
             continue
         rel = "/" + os.path.relpath(d, base).replace(os.sep, "/") + "/"
+        if rel.startswith("/posts/"):
+            rel = "/" + os.path.basename(d) + "/"     # [permalinks] posts = "/:contentbasename/"
         fm, _ = split_front_matter(open(os.path.join(d, "index.md"), encoding="utf-8").read())
         url = fm_value(fm, "url") or rel
         url = "/" + url.strip("/") + "/"
@@ -139,9 +160,17 @@ def check(path, urls, aliases):
         warns.append("No categories (archetype \"\" placeholder counts as none)")
     if not tags:
         warns.append("No tags")
-    for t in tags + cats:
-        if t != t.lower() or " " in t:
-            warns.append(f"Tag/category '{t}' - use lowercase-hyphenated so it matches existing ones")
+    if len(cats) > 1:
+        warns.append(f"{len(cats)} categories - use one (guides, recommended, news or personal)")
+    for kind, values in (("tags", tags), ("categories", cats)):
+        allowed = allowed_terms(kind)
+        for t in values:
+            if allowed and t not in allowed:
+                warns.append(f"'{t}' isn't an existing {kind[:-1] if kind == 'tags' else 'category'} "
+                             f"({', '.join(sorted(allowed))}). Use one of those, or if it's genuinely new "
+                             f"create content/{kind}/{t}/_index.md with a title and description")
+    if len(tags) > 4:
+        warns.append(f"{len(tags)} tags - 2-4 is plenty")
 
     # URL / folder name
     slug = fm_value(fm, "slug") or os.path.basename(post_dir)
@@ -153,7 +182,7 @@ def check(path, urls, aliases):
     # Cover / share image
     cover = fm_value(fm, "coverImage")
     if not cover:
-        warns.append("No coverImage - social shares and the home page will use the first image or the site default")
+        pass  # checked below, once we know whether the post has any images
     elif not cover.startswith("/") and not cover.startswith("http"):
         found = any(os.path.basename(cover) == f for _, _, fs in os.walk(post_dir) for f in fs)
         if not found:
@@ -184,6 +213,8 @@ def check(path, urls, aliases):
         alt = re.search(r"""\balt=["']([^"']*)""", tag)
         if src:
             images.append((alt.group(1) if alt else "", src.group(1)))
+    if not cover and not images:
+        warns.append("No coverImage and no images - shares and the home page will use the generic site image")
     no_alt = 0
     for alt, src in images:
         if not alt.strip():
@@ -200,7 +231,18 @@ def check(path, urls, aliases):
         warns.append(f"{no_alt} image(s) with no alt text - describe what the image shows, e.g. ![Pi 5 on a desk](...)")
 
     # Links
+    heading_ids = set()
+    for h in re.findall(r"^#{1,6}\s+(.+?)\s*(?:\{#([^}]+)\})?\s*$", code_free, re.M):
+        hid = h[1] if h[1] else heading_id(h[0])
+        base, n = hid, 1
+        while hid in heading_ids:          # Hugo de-duplicates repeated headings as -1, -2...
+            hid, n = f"{base}-{n}", n + 1
+        heading_ids.add(hid)
     for label, href in re.findall(r"(?<!!)\[([^\]]*)\]\(\s*<?([^)\s>]+)", code_free):
+        if href.startswith("#") and len(href) > 1 and href[1:] not in heading_ids:
+            close = [i for i in heading_ids if i.startswith(href[1:2])]
+            hint = f" - did you mean #{close[0]}?" if len(close) == 1 else ""
+            errors.append(f"Table of contents / in-page link {href} doesn't match any heading{hint}")
         if not label.strip():
             warns.append(f"Link with no text: {href}")
         if re.match(r"(?i)^(click here|here|this|link|read more)$", label.strip()):
@@ -235,6 +277,83 @@ def check(path, urls, aliases):
     return title, errors, warns, words
 
 
+# ------------------------------------------------------------ link check --
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
+# Sites that routinely refuse scripts (bot protection) - a refusal there isn't proof the link is dead.
+BOT_WALLED = ("amazon.", "amzn.to", "amzn.eu", "linkedin.com", "facebook.com", "instagram.com",
+              "twitter.com", "x.com", "medium.com", "reddit.com")
+
+
+def external_links(path):
+    """External http(s) URLs in a post, outside code blocks."""
+    _, body = split_front_matter(open(path, encoding="utf-8").read())
+    body = strip_code(body)
+    found = re.findall(r"\]\(\s*<?(https?://[^)\s>]+)", body)
+    found += re.findall(r"""(?:href|src)=["'](https?://[^"']+)""", body)
+    found += re.findall(r"\{\{<\s*youtube\s+(?:id=)?\"?([\w-]{11})", body)
+    out = []
+    for u in found:
+        if re.fullmatch(r"[\w-]{11}", u):
+            u = f"https://www.youtube.com/watch?v={u}"
+        if SITE_HOST in urlparse(u).netloc:
+            continue  # internal links are checked from the source files already
+        out.append(u.rstrip(".,"))
+    return out
+
+
+def fetch(url):
+    """(status, final_url) using the system curl - it has the Mac's certificates and handles redirects."""
+    cmd = ["curl", "-sS", "-L", "--max-redirs", "8", "-o", "/dev/null", "--max-time", "20",
+           "-A", UA, "-H", "Accept: text/html,*/*", "-w", "%{http_code} %{url_effective}", url]
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+    except (OSError, subprocess.TimeoutExpired) as e:
+        return 0, str(e)
+    parts = r.stdout.strip().split(" ", 1)
+    code = int(parts[0]) if parts and parts[0].isdigit() else 0
+    if code == 0:
+        return 0, (r.stderr.strip().splitlines() or ["no response"])[-1]
+    return code, parts[1] if len(parts) > 1 else url
+
+
+def check_links(paths):
+    """Fetch every external link in the given posts. Returns (errors, warnings) per post path."""
+    per_post = {p: external_links(p) for p in paths}
+    unique = sorted({u for us in per_post.values() for u in us})
+    if not unique:
+        return {}
+    print(f"\nChecking {len(unique)} external link(s) in {len(paths)} post(s)…", flush=True)
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        results = dict(zip(unique, pool.map(fetch, unique)))
+    report = {}
+    for p, us in per_post.items():
+        errs, warns = [], []
+        for u in dict.fromkeys(us):
+            code, final = results[u]
+            host = urlparse(u).netloc.lower()
+            walled = any(b in host for b in BOT_WALLED)
+            if 200 <= code < 400:
+                fhost = urlparse(final).netloc.lower().removeprefix("www.")
+                if fhost and fhost != host.removeprefix("www.") and not walled:
+                    warns.append(f"Link now redirects to another site - check it's still right: {u} -> {final}")
+            elif code in (404, 410) and not walled:
+                errs.append(f"Dead link ({code}): {u}")
+            elif code == 0 and not walled:
+                errs.append(f"Link failed ({final}): {u}")
+            elif code == 0:
+                warns.append(f"Couldn't reach ({final}) - open it by hand to confirm: {u}")
+            elif walled or code in (401, 403, 405, 429, 999):
+                warns.append(f"Site refused the checker ({code}) - open it by hand to confirm: {u}")
+            else:
+                warns.append(f"Link returned HTTP {code}: {u}")
+        if errs or warns:
+            report[p] = (errs, warns)
+    ok = sum(1 for u in unique if 200 <= results[u][0] < 400)
+    print(f"Links: {ok}/{len(unique)} OK", flush=True)
+    return report
+
+
 # ------------------------------------------------------------------ main --
 def changed_posts():
     """Draft posts plus posts changed/untracked relative to origin/main."""
@@ -259,6 +378,8 @@ def changed_posts():
 
 def main():
     args = sys.argv[1:]
+    links = "--links" in args
+    args = [a for a in args if a != "--links"]
     if "-h" in args or "--help" in args:
         print(__doc__.strip())
         return 0
@@ -275,9 +396,12 @@ def main():
         return 0
 
     urls, aliases = known_post_urls()
+    link_report = check_links(paths) if links else {}
     total_err = total_warn = 0
     for p in paths:
         title, errors, warns, words = check(p, urls, aliases)
+        errors += link_report.get(p, ([], []))[0]
+        warns += link_report.get(p, ([], []))[1]
         total_err += len(errors)
         total_warn += len(warns)
         rel = os.path.relpath(p, ROOT)
@@ -287,7 +411,8 @@ def main():
             print(f"  {c('31', 'ERROR')} {e}")
         for w in warns:
             print(f"  {c('33', 'WARN ')} {w}")
-    print(f"\nSEO check: {len(paths)} post(s), {total_err} error(s), {total_warn} warning(s)")
+    print(f"\nSEO check: {len(paths)} post(s), {total_err} error(s), {total_warn} warning(s)"
+          + ("" if links else "  (add --links to also test external links)"))
     return 1 if total_err else 0
 
 

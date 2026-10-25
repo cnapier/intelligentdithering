@@ -10,7 +10,7 @@
   {{ $sidebar := .Site.Params.sidebar }}
   <div class="short-about">
     {{ if $sidebar.gravatarEmail }}
-    <img src="https://s.gravatar.com/avatar/{{ md5 $sidebar.gravatarEmail }}?s=200" width="200" height="200" alt="{{ site.Params.author }}" loading="lazy" />
+    <img src="https://s.gravatar.com/avatar/{{ md5 $sidebar.gravatarEmail }}?s=200" alt="{{ site.Params.author }}" loading="lazy" />
     {{ else if $sidebar.avatar }}
     <img src="{{ $sidebar.avatar | relURL }}" alt="{{ site.Params.author }}" loading="lazy" />
     {{ end }}

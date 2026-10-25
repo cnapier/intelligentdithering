@@ -1,14 +1,14 @@
 ---
 title: "£8 HDMI capture stick - must have kit"
+description: "A cheap USB HDMI capture stick turns your laptop into a monitor for a Raspberry Pi or Fire Stick and records HDMI video. Mine cost just £8."
 date: 2020-08-29
-categories: 
-  - "guides"
+categories:
   - "recommended"
-tags: 
+tags:
   - "raspberry-pi"
-  - "recommended"
+  - "maker"
 aliases:
-  - "/8-hdmi-capture-stick-must-have-kit/"
+  - "/posts/2020/08/8-hdmi-capture-stick-must-have-kit/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/8-hdmi-capture-stick-must-have-kit/"
 ---
@@ -17,7 +17,7 @@ Been toying with the idea of making a few YouTube videos on setting up various R
 
 I had always thought that HDMI capture devices would be crazy expensive but it turns out they are very cheap now, around £20 will get a half decent one. [I got this one](https://amzn.to/2D8V6hJ) for £8!!!
 
-![](images/image-930x1024.png)
+![Product photo of the HDMI capture stick](images/image-930x1024.webp)
 
 If you are a serial tinkerer, having one of these is not just good for recording videos, but also means you dont need a monitor when setting up a Pi, or in the most recent case, an Amazon Fire Stick.
 

@@ -1,13 +1,13 @@
 ---
 title: "Raspberry Pi Zero: A computer for only £4!"
+description: "The Raspberry Pi Zero: a 1GHz computer with 512MB RAM for just £4, and free on the cover of The MagPi. The full specs and why it matters."
 date: 2015-11-26
-categories: 
+categories:
   - "news"
-tags: 
+tags:
   - "raspberry-pi"
-  - "recommended"
 aliases:
-  - "/raspberry-pi-zero-a-computer-for-only-4/"
+  - "/posts/2015/11/raspberry-pi-zero-a-computer-for-only-4/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/raspberry-pi-zero-a-computer-for-only-4/"
 ---
@@ -20,7 +20,7 @@ A computer. Free on the front of a magazine. Just think about that.
 
 My first PC had a 100Mhz CPU with 32MB of RAM and cost around £1000. This has a 1Ghz CPU (10 times more) and 512MB of RAM and costs £4. (I know the Ghz / Mhz comparison is flawed due to ARM vs Intel etc. but don’t spoil the moment, it’s still cool!)
 
-![](images/image.png)
+![Raspberry Pi Zero lying on a US five-dollar bill, showing it's smaller than the note](images/image.webp)
 
 The Pi Zero uses the same BM2835 CPU as the original Raspberry Pi but has been overclocked to produce about 40% extra speed. It has also received a bump in memory to 512MB.
 
@@ -57,7 +57,7 @@ The Pi Zero uses the same BM2835 CPU as the original Raspberry Pi but has been o
       
     
 
-Don’t think about it, just go on to [The Pi Hut](http://thepihut.com/products/raspberry-pi-zero) or [Pimoroni](http://pimoroni.com/zero) and get some ordered. If you have chidlren who you would like to introduce to coding and electronics, one of these with a few cables would make a fantastic stocking filler. It will run Scratch, Sonic Pi, and all the other fantastic tools that have been provided to aid budding coders in the latest release of Raspbian.
+Don’t think about it, just go on to [The Pi Hut](https://thepihut.com/products/raspberry-pi-zero) or [Pimoroni](https://pimoroni.com/zero) and get some ordered. If you have chidlren who you would like to introduce to coding and electronics, one of these with a few cables would make a fantastic stocking filler. It will run Scratch, Sonic Pi, and all the other fantastic tools that have been provided to aid budding coders in the latest release of Raspbian.
 
 I can see this new small form factor enabling some wearable tech using a Pi, or very small embedded systems. And the insanely low cost will hopefully remove the final barrier for anyone wanting to learn more about computers and coding. What a noble goal the Raspberry Pi foundaton have been aiming for and I think they have totally smashed it. To be able to put a computer to play and experiment and learn on within reach of anyone in society. Amazing.
 

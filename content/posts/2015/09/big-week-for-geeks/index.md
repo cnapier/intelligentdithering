@@ -1,14 +1,14 @@
 ---
 title: "Big week for geek news"
+description: "Apple's iPhone 6S event, iOS 9, watchOS 2 and a new Apple TV, plus the official Raspberry Pi 7-inch touchscreen – a big week for geek news."
 date: 2015-09-08
-categories: 
+categories:
   - "news"
-tags: 
-  - "apple"
-  - "news"
+tags:
+  - "ios"
   - "raspberry-pi"
 aliases:
-  - "/big-week-for-geeks/"
+  - "/posts/2015/09/big-week-for-geeks/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/big-week-for-geeks/"
 ---

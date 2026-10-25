@@ -1,14 +1,15 @@
 ---
 title: "5 more Mac apps I use everyday"
+description: "Five more Mac apps I use every day, all in the Setapp subscription: MindNode, Paletro, Downie, Folx and TripMode."
 date: 2023-08-18
-categories: 
+categories:
   - "recommended"
-tags: 
+tags:
+  - "mac"
   - "apps"
-  - "macos"
-  - "setapp"
+  - "productivity"
 aliases:
-  - "/5-more-mac-apps-i-use-everyday/"
+  - "/posts/2023/08/5-more-mac-apps-i-use-everyday/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/5-more-mac-apps-i-use-everyday/"
 ---
@@ -23,7 +24,7 @@ If you have never tried mind mapping before, I would also recommend you [read th
 
 <figure>
 
-![](images/image-1-1024x512.png)
+![MindNode mind map titled What is Mind Mapping, with branches for writing, planning, organising and note taking](images/image-1-1024x512.png)
 
 <figcaption>
 
@@ -37,11 +38,11 @@ MindNode in action
 
 [Paletro](https://appmakes.io/paletro) provides quick access to commands available in the menu of the app you are using. Just use hotkey combination Command-Shift-P to prompt the command menu for the app you are in, browse or search commands, locate the one you need, and click Enter to execute. The more time you can spend on the keyboard and not needing to use the mouse, the faster you will be. Soon it becomes second nature and when you use a Mac that doesn’t have it installed it feels broken! Definitely an essential Mac app.
 
-![](images/image-2.png)
+![Paletro command palette on a Mac, showing menu commands like Open Recent and Export filtered as you type](images/image-2.png)
 
 ### Downie - Youtube video downloader
 
-In the era of multimedia content, having a reliable video downloader is a game-changer. Downie is my go-to app for effortlessly downloading videos from various websites. Whether I’m saving educational lectures, entertainment content, or online tutorials, Downie makes the process quick and hassle-free. This also pairs briliantly with [Permute from my last article](/posts/2023/08/supercharge-your-mac-with-mac-apps-from-setapp/), for downloading YouTube videos and then converting them to MP3 only so that you can listen to them on the move.
+In the era of multimedia content, having a reliable video downloader is a game-changer. Downie is my go-to app for effortlessly downloading videos from various websites. Whether I’m saving educational lectures, entertainment content, or online tutorials, Downie makes the process quick and hassle-free. This also pairs briliantly with [Permute from my last article](/supercharge-your-mac-with-mac-apps-from-setapp/), for downloading YouTube videos and then converting them to MP3 only so that you can listen to them on the move.
 
 ### Folx - Download Manager
 
@@ -49,7 +50,7 @@ While internet speeds have increased and connections have become more reliable t
 
 ### TripMode - monitor internet use of Mac apps
 
-![](images/image-3.png)
+![TripMode menu bar window listing data used per app this session, with Zoom, Safari and Slack allowed online](images/image-3.webp)
 
 When you’re on the go, managing your internet connection is crucial to avoid unexpected data charges. [TripMode](https://tripmode.ch) is a brilliant app that gives me granular control over which apps can access the internet while I’m tethered to my mobile hotspot or on a limited network. This not only helps me save data but also ensures that essential tasks get priority. TripMode is an essential companion for travelers, remote workers, or anyone conscious of their internet usage. We use a 4G router when on holiday at our caravan and having TripMode reassures me we aren’t going to burn through our allowance unexpectedly! Also provides a sometimes surprising view of just how many apps on your computer are using the network!
 

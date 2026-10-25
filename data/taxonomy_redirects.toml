@@ -1,0 +1,28 @@
+# Old tag/category pages -> where they now live. Used by layouts/index.htaccess
+# to 301 both the Hugo URLs (/tags/x/) and the old WordPress ones (/tag/x/).
+# When you retire or merge a tag, add a line here so its page doesn't 404.
+
+[tags]
+apple = "/tags/ios/"
+goodnotes = "/tags/ios/"
+shortcuts = "/tags/productivity/"
+task-management = "/tags/productivity/"
+setapp = "/tags/mac/"
+macos = "/tags/mac/"
+moodle = "/tags/education/"
+dyslexia = "/tags/education/"
+gifts = "/tags/maker/"
+digital-signage = "/tags/maker/"
+health = "/tags/wellbeing/"
+fitness = "/tags/wellbeing/"
+mental-health = "/tags/wellbeing/"
+tools = "/tags/sysadmin/"
+home-assistant = "/tags/home-automation/"
+energy-monitoring = "/tags/home-automation/"
+guides = "/categories/guides/"
+recommended = "/categories/recommended/"
+news = "/categories/news/"
+personal = "/categories/personal/"
+
+[categories]
+mental-health = "/categories/personal/"

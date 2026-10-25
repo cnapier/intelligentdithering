@@ -1,15 +1,13 @@
 ---
 title: "New iOS 17 update: Features I will be using immediately"
+description: "The iOS 17 features I started using straight away: Live Voicemail, StandBy mode, interactive widgets, autocorrect fixes and more."
 date: 2023-09-19
-categories: 
-  - "guides"
+categories:
   - "news"
-tags: 
-  - "guides"
+tags:
   - "ios"
-  - "news"
 aliases:
-  - "/new-ios-17-update-features-i-will-be-using-immediately/"
+  - "/posts/2023/09/new-ios-17-update-features-i-will-be-using-immediately/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/new-ios-17-update-features-i-will-be-using-immediately/"
 ---
@@ -26,7 +24,7 @@ This allows me to silence all unknown callers and be confident that I wont miss 
 
 Standby is a new mode in iOS 17 that activates when your phone is charging and is horizontal. Luckily [my charging stand](https://amzn.to/3PqDuip) still works when my phone is horizontal so I tried this last night and it is awesome.
 
-![](images/image-3-1024x473.png)
+![iOS 17 StandBy mode on a charging iPhone, showing an analogue clock beside the date in large text](images/image-3-1024x473.png)
 
 You can choose some widgets to display (I just chose the date and the clock to start) and if the ambient light is low it will display in a muted red colour which is perfect when you wake in the middle of the night and need to check the time without searing your retinas!
 
@@ -46,7 +44,7 @@ You know when you log into a site and they send you a 6 digit codes as a text? I
 
 In Maps in iOS 17 you can now choose to download Offline maps. If you are planning to go for a hike or a long drive and you might not have data coverage, this will be super useful.
 
-![](images/image-4-474x1024.png)
+![Downloading an offline map of London in Apple Maps on iOS 17, with the map area selected and its download size](images/image-4-474x1024.webp)
 
 ## Autocorrect corrected
 

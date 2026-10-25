@@ -2,32 +2,24 @@
 title: "DIY Whole Home Energy Monitoring with Home Assistant"
 description: "How I added whole-home electricity monitoring to an old analogue meter using a CT clamp, ESPHome and Home Assistant – for under £20."
 date: 2024-03-25
-categories: 
+categories:
   - "guides"
-tags: 
-  - "energy-monitoring"
-  - "guides"
-  - "home-assistant"
+tags:
   - "home-automation"
+  - "maker"
 aliases:
-  - "/diy-whole-home-energy-monitoring-with-home-assistant/"
+  - "/posts/2024/03/diy-whole-home-energy-monitoring-with-home-assistant/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/diy-whole-home-energy-monitoring-with-home-assistant/"
 ---
 
-- [Why energy monitoring?](#why-energy-monitoring)
-- [Important warning](#important-warning)
-- [The Plan](#the-plan)
-- [The Parts](#the-parts)
-- [Prepare the sensor](#prepare-the-sensor)
-- [Install the sensor](#install-the-sensor)
-- [Conclusion](#conclusion)
+{{< toc >}}
 
 ## Why energy monitoring?
 
 I recently decided I wanted more data on our home energy usage. Unfortunately our meter box is over 20 years old and our energy supplier wont replace it until it is 30 years old. It is an old spinning disk style meter with analog display.
 
-![](images/analogmeter-1024x768.webp)
+![Photo of an old spinning metal disk style electricity meter](images/analogmeter-1024x768.webp)
 
 I had considered using a camera and some machine learning to read the digits from the display, but I think monitoring the actual power usage will be much better. Doing this is dangerous however so I needed a way to do it without my wife cashing in the life insurance!
 
@@ -35,9 +27,9 @@ CT Clamps measure the magnetic field coming from an electrical cable. My measuri
 
 ## Important warning
 
-**_I am not a qualified electrician. Using even these “safe” CT clamps does have a risk associated with it, and being in and around your electricity meter is obviously risky business. Please consult a suitably certified expert before attempting any of this! YOU HAVE BEEN WARNED!_**[](#important-warning)
+**_I am not a qualified electrician. Using even these “safe” CT clamps does have a risk associated with it, and being in and around your electricity meter is obviously risky business. Please consult a suitably certified expert before attempting any of this! YOU HAVE BEEN WARNED!_**
 
-![](images/electric-shock.gif)
+![Animated movie clip of a man being electrocuted, his hair standing on end](images/electric-shock.webp)
 
 ## The Plan
 
@@ -145,7 +137,7 @@ You have to calibrate the sensor using a known load. How I did this was to strip
 
 <figure>
 
-![](images/testcable-225x300.webp)
+![Unsafe home-made test lead with bare wires twisted into a UK mains plug – do not make one of these](images/testcable-225x300.webp)
 
 <figcaption>
 
@@ -167,11 +159,11 @@ I also 3D printed the case for the Wemos and adaptor board to keep everything ne
 
 ![energy monitoring device installed](images/clampinstalled-1024x768.webp)
 
-![](images/sensorincase-1024x768.webp)
+![The finished energy monitor: a small grey box with a blue USB cable, sitting on a shelf](images/sensorincase-1024x768.webp)
 
 Within minutes I had data flowing to Home Assistant. All that was left to do is add it to the dashboard.
 
-![](images/dashboard-473x1024.webp)
+![Home Assistant dashboard on a phone with gauges showing live power use for the tumble dryer and the whole house](images/dashboard-473x1024.webp)
 
 I chose to use the Gauge type widget for this and will adjust the markings of the green, yellow and red areas as I monitor our usage.
 

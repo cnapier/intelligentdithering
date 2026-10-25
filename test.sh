@@ -4,6 +4,8 @@
 #
 #   ./test.sh            # SEO-check drafts/changed posts, then start the preview server
 #   ./test.sh --all      # SEO-check every post first
+#   ./test.sh --links    # ...and fetch every external link in those posts (slow)
+#   ./test.sh --all --links
 #   SKIP_SEO=1 ./test.sh # straight to the server
 
 cd ~/Sites/IntelligentDithering/ || exit 1

@@ -7,6 +7,16 @@ RedirectMatch 301 ^/feed/(rss|rss2|atom|rdf)/?$ /index.xml
 RedirectMatch 301 ^/category/([^/]+)/feed/?$ /categories/$1/index.xml
 RedirectMatch 301 ^/tag/([^/]+)/feed/?$ /tags/$1/index.xml
 
+# Retired/merged tags and categories (data/taxonomy_redirects.toml). These come
+# before the generic rules below because the first matching rule wins.
+{{ range $kind, $map := hugo.Data.taxonomy_redirects -}}
+{{- $wp := cond (eq $kind "tags") "tag" "category" -}}
+{{- range $old, $new := $map }}
+RedirectMatch 301 ^/({{ $kind }}|{{ $wp }})/{{ $old }}/?$ {{ $new }}
+RedirectMatch 301 ^/({{ $kind }}|{{ $wp }})/{{ $old }}/(index\.xml|feed/?)$ {{ $new }}index.xml
+{{- end }}
+{{- end }}
+
 # Old WordPress archive URLs -> Hugo taxonomy pages
 RedirectMatch 301 ^/category/([^/]+)/?$ /categories/$1/
 RedirectMatch 301 ^/tag/([^/]+)/?$ /tags/$1/

@@ -1,17 +1,18 @@
 ---
 title: "My method for Windows system imaging"
+description: "How I build a Windows golden image for FOG: a VirtualBox VM, audit mode, snapshots and Sysprep, so one image deploys to any make and model of PC."
 date: 2015-09-20
-categories: 
+categories:
   - "guides"
-tags: 
+tags:
   - "sysadmin"
 aliases:
-  - "/my-method-for-windows-system-imaging/"
+  - "/posts/2015/09/my-method-for-windows-system-imaging/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/my-method-for-windows-system-imaging/"
 ---
 
-In our school we use FOG as our imaging system [as I have mentioned before.](/posts/2015/08/open-source-pc-imaging-with-fog/)
+In our school we use FOG as our imaging system [as I have mentioned before.](/open-source-pc-imaging-with-fog/)
 
 I like to keep a default image with an up to date installation of Windows 7 Pro, Office 2010 and other essential tools and utilities on it. Most of our smaller bits of software we push out to the machines using Group Policy.
 

@@ -1,21 +1,20 @@
 ---
 title: "Lockdown Mental Health - 1 year later!"
+description: "One year into lockdown, what has helped my mental health: exercise, routine, downtime, giving myself some slack, journalling and mindfulness."
 date: 2021-03-19
-categories: 
-  - "mental-health"
+categories:
   - "personal"
-tags: 
-  - "mental-health"
-  - "personal"
+tags:
+  - "wellbeing"
 aliases:
-  - "/lockdown-mental-health-1-year-later/"
+  - "/posts/2021/03/lockdown-mental-health-1-year-later/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/lockdown-mental-health-1-year-later/"
 ---
 
-![Laptop with the words Mental Health on the screen ](images/image-1024x682.png)
+![Laptop with the words Mental Health on the screen ](images/image-1024x682.webp)
 
-It has been exactly one year [since I wrote my post](/posts/2020/03/improving-mental-health-during-troubling-times/) about ways to help with your mental health during troubling times. None of us could have predicted that a year on we would be in a similar position to the first Lockdown of 2020 ( I am dating these in case it becomes an annual fixture! ).
+It has been exactly one year [since I wrote my post](/improving-mental-health-during-troubling-times/) about ways to help with your mental health during troubling times. None of us could have predicted that a year on we would be in a similar position to the first Lockdown of 2020 ( I am dating these in case it becomes an annual fixture! ).
 
 Back in 2020 the idea that this would become a major issue was almost laughable at the start.
 

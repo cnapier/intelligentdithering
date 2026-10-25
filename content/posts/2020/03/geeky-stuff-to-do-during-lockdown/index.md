@@ -1,14 +1,14 @@
 ---
 title: "Geeky stuff to do during lockdown"
+description: "Geeky ways to fill a lockdown: free library eBooks with Libby, Readly magazines, Audible Stories, YouTube channels to learn from and more."
 date: 2020-03-29
-categories: 
-  - "guides"
+categories:
   - "recommended"
-tags: 
-  - "guides"
-  - "recommended"
+tags:
+  - "apps"
+  - "wellbeing"
 aliases:
-  - "/geeky-stuff-to-do-during-lockdown/"
+  - "/posts/2020/03/geeky-stuff-to-do-during-lockdown/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/geeky-stuff-to-do-during-lockdown/"
 ---
@@ -78,7 +78,3 @@ Scrabble for iOS and Android. Play turn based over an hour or a few days, whatev
 ### [Super Mario Run](https://apps.apple.com/us/app/super-mario-run/id1145275343)
 
 Very simple runner game. My kids love this and the music will bring back happy memories for anyone who grew up in the 80s.
-
-### [Any of the Angry Birds series](https://apps.apple.com/zw/app/angry-birds-space/id499511971)
-
-Another set of easy to play games which are fun for kids and adults alike.

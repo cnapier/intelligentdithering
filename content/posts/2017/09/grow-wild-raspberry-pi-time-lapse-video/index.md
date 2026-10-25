@@ -1,13 +1,15 @@
 ---
 title: "Grow Wild Raspberry Pi time-lapse: VIDEO"
+description: "Building a battery and solar-powered Raspberry Pi Zero time-lapse camera with a WittyPi to film our school's Grow Wild flower meadow growing."
 date: 2017-09-25
-categories: 
+categories:
   - "guides"
-tags: 
-  - "guides"
+tags:
   - "raspberry-pi"
+  - "maker"
+  - "education"
 aliases:
-  - "/grow-wild-raspberry-pi-time-lapse-video/"
+  - "/posts/2017/09/grow-wild-raspberry-pi-time-lapse-video/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/grow-wild-raspberry-pi-time-lapse-video/"
 ---
@@ -20,16 +22,16 @@ I am not much of a gardener so my attention was turned to the techy side. The te
 
 Where the camera had to be placed to capture the flowers was going to rule out having a power source. We looked at running an ethernet cable and using power over ethernet but we would have had to do some fairly serious digging and it seemed like too much of an undertaking. Battery power was the plan so I had to make something reasonably power efficient. We settled on the following parts:
 
-- [Raspberry Pi Zero W with official case with camera lid](http://amzn.to/2jPjsTc)
+- [Raspberry Pi Zero W with official case with camera lid](https://amzn.to/2jPjsTc)
     
 
-- [Raspberry Pi Zero Camera Module](http://amzn.to/2hobOuM)
+- [Raspberry Pi Zero Camera Module](https://amzn.to/2hobOuM)
     
 
-- [WittyPi2 Power Control board and RealTime Clock](http://www.uugear.com/product/wittypi2/)
+- [WittyPi2 Power Control board and RealTime Clock](https://www.uugear.com/product/wittypi2/)
     
 
-- [USB Battery Bank with Solar panel](http://amzn.to/2fht8AQ)
+- [USB Battery Bank with Solar panel](https://amzn.to/2fht8AQ)
     
 
 - Old Tupperware box
@@ -39,23 +41,23 @@ Where the camera had to be placed to capture the flowers was going to rule out h
 
 We cut a hole in the Tupperware box as it had a slight frosting which would affect the image quality. A small piece of glass from a picture frame was attached with silicone to provide a viewing window for the camera. A few days in we realised the rig wasnt coping well with bright sunlight so we taped around with gaffer tape to reduce glare into the lens.
 
-![](images/image-2.png)
+![Clear plastic food box with a glass viewing window glued in, ready to house the time-lapse camera](images/image-2.webp)
 
-![](images/image-3.png)
+![Panoramic view of the school grounds with the newly sown wild flower strip along the fence](images/image-3.webp)
 
-![](images/image-4.png)
+![Time-lapse camera box mounted on a fence post below a Grow Wild Timelapse Camera Project sign](images/image-4.webp)
 
-![](images/image-5.png)
+![Close-up of the weatherproofed camera box taped up and bolted to a wooden bracket on the fence](images/image-5.webp)
 
-![](images/image-6.png)
+![Camera box on the fence looking along the wild flower bed in full yellow bloom](images/image-6.webp)
 
-![](images/image-7.png)
+![Raspberry Pi in its red and white case stacked on top of the Witty Pi 2 power board](images/image-7.webp)
 
-![](images/image-8.png)
+![Witty Pi 2 real-time clock and power management board for Raspberry Pi, with its coin cell battery fitted](images/image-8.webp)
 
-![](images/image-1.png)
+![The freshly dug and sown flower bed along the school fence, with the camera box on a post](images/image-1.webp)
 
-![](images/image.png)
+![Inside the camera box: the Raspberry Pi on its bracket next to a solar-panel USB battery bank](images/image.webp)
 
 Thanks to Sid in our Technology and Design Dept we got a plastic bracket made up to hold the Raspberry Pi in place and it was bolted to the box by some pieces of wood by Colin our Maintenance officer and a bracket made to angle the box and mount it to a fence post.
 

@@ -1,16 +1,16 @@
 ---
 title: "Dual Screen DIY CyberDeck"
+description: "Sector 07's dual-screen DIY cyberdeck: a Raspberry Pi build with twin rotating touchscreens, a 3D-printed case and open-source files to build your own."
 date: 2025-07-30T10:52:46Z
-categories: 
+categories:
   - "news"
-  - "recommended"
-tags: 
+tags:
+  - "raspberry-pi"
   - "maker"
   - "open-source"
-  - "raspberry-pi"
-coverImage: "Screenshot-2025-07-30-at-11.51.30.png"
+coverImage: "Screenshot-2025-07-30-at-11.51.30.webp"
 aliases:
-  - "/dual-screen-diy-cyberdeck/"
+  - "/posts/2025/07/dual-screen-diy-cyberdeck/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "https://intelligentdithering.com/?p=470"
 ---

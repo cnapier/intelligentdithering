@@ -1,37 +1,28 @@
 ---
 title: "iOS 17.2 released - reasons to upgrade"
+description: "What's new in iOS 17.2: Apple's Journal app, catch-up in Messages, AirDrop upgrades, spatial video recording, Qi2 charging and more."
 date: 2023-12-11
-categories: 
+categories:
   - "news"
-tags: 
+tags:
   - "ios"
-  - "news"
 aliases:
-  - "/ios-17-2-released-reasons-to-upgrade/"
+  - "/posts/2023/12/ios-17-2-released-reasons-to-upgrade/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/ios-17.2-released-reasons-to-upgrade/"
 ---
 
-![](images/image-2-1024x585.png)
+![iPhone showing the iOS 17.2 update screen](images/image-2-1024x585.webp)
 
 Apple has released iOS 17.2 and iPadOS 17.2 today. There are several improvements and new features worth knowing about that make this an update you don’t want to miss.
 
-- [Journal App](#journal-app)
-- [Catch-up in Messages](#catch-up-in-messages)
-- [Favourite songs playlist](#favourite-songs-playlist)
-- [AirDrop Upgrades](#airdrop-upgrades)
-- [Smart Autofill for PDFs](#smart-autofill-for-pd-fs)
-- [Digital Clock Widget](#digital-clock-widget)
-- [More weather widget options](#more-weather-widget-options)
-- [Spatial Video recording](#spatial-video-recording)
-- [Action button translate option](#action-button-translate-option)
-- [Qi2 Charging support for iPhone 13 and 14](#qi2-charging-support-for-iphone-13-and-14)
+{{< toc >}}
 
 ## Journal App
 
-![](images/image-3.png)
+![Apple Journal app on iPhone suggesting recent moments – photos, a workout and music – to write about](images/image-3.png)
 
-Apple have finally released their Journal app. It will prompt you several times a day to reflect on your mood and what might be causing you to feel that way, in an attempt to step back from the feelings and analyse your behaviour. Journalling has been shown to help with many mental health issues and [I use it myself](/posts/2021/03/lockdown-mental-health-1-year-later/), but I am not sure I will switch from my Obsidian plain text method to this.
+Apple have finally released their Journal app. It will prompt you several times a day to reflect on your mood and what might be causing you to feel that way, in an attempt to step back from the feelings and analyse your behaviour. Journalling has been shown to help with many mental health issues and [I use it myself](/lockdown-mental-health-1-year-later/), but I am not sure I will switch from my Obsidian plain text method to this.
 
 Apple says:
 
@@ -45,7 +36,7 @@ Other apps can tie into the Journalling app using an API, so I expect this featu
 
 This is a small feature but very useful, and honestly one I am shocked has taken so long to appear! When you open a conversation with a lot of unread messages, you can tap on the little ^ symbol in the top right to scroll to the first unread message in a thread.
 
-![](images/image-4-1024x567.png)
+![Messages group chat with the new catch-up arrow highlighted, used to jump to the first unread message](images/image-4-1024x567.png)
 
 ## Favourite songs playlist
 

@@ -1,19 +1,19 @@
 ---
 title: "Teaching with Moodle: An Introduction"
+description: "Teaching with Moodle is a free online course from the Moodle team – learn to build engaging courses by experiencing Moodle as a student does."
 date: 2017-01-03
-categories: 
+categories:
   - "guides"
-tags: 
+tags:
   - "education"
-  - "moodle"
   - "open-source"
 aliases:
-  - "/teaching-with-moodle-an-introduction/"
+  - "/posts/2017/01/teaching-with-moodle-an-introduction/"
 # Original WordPress feed GUID - keep so feed readers do not re-show this post
 guid: "http://localhost:1313/teaching-with-moodle-an-introduction/"
 ---
 
-If you are a beginner to the [Moodle Learning Management System](http://www.moodle.org) or even a current user just wishing to update and hone their skills then I can highly recommend this free online course delivered by the Moodle team themselves.
+If you are a beginner to the [Moodle Learning Management System](https://www.moodle.org) or even a current user just wishing to update and hone their skills then I can highly recommend this free online course delivered by the Moodle team themselves.
 
 The course will take you through the basics of using Moodle to deliver Learning and Teaching to your students and showcases some of the excellent widgets and tools on offer.
 
@@ -25,4 +25,4 @@ The course is free and should only require 3-4 hours per week of time (probably 
 
 Here is a copy of the course outline. You also get a digital certificate on completion of the course, which you may be able to use towards whatever form of Professional Development scheme your institution operates.
 
-![](images/image-1024x583.png)
+![Teaching with Moodle course details and four-week outline, from getting started to taking it further](images/image-1024x583.png)
