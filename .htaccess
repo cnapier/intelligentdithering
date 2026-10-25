@@ -1,5 +1,22 @@
 ErrorDocument 404 /404.html
 
+# --- Browser caching -------------------------------------------------------
+# Pages, feeds and the search index: browsers must check for a newer copy every
+# time (a quick 304 "not modified" when nothing changed), so updates show at once.
+# CSS/JS that Hugo fingerprints (name contains a hash) never change, so cache them
+# for a year. Images and other files: a week.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|xml|json|txt|webmanifest)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.[0-9a-f]{64}\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(webp|png|jpe?g|gif|svg|ico|woff2?|ttf|eot)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
 # Old WordPress feed URLs -> Hugo feeds (permanent, so feed readers update the subscription)
 RedirectMatch 301 ^/feed/?$ /index.xml
 RedirectMatch 301 ^/feed/(rss|rss2|atom|rdf)/?$ /index.xml
