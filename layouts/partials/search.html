@@ -1,0 +1,15 @@
+{{- /*
+  Site override of the theme search overlay: a floating, Spotlight-style panel
+  over a dimmed page instead of a full-screen sheet. Behaviour lives in
+  assets/js/search.js, styling in assets/css/custom.scss ("Search panel").
+*/ -}}
+<div class="search-page" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-panel">
+    <div class="search-bar">
+      {{ partial "icon.html" "search" }}
+      <input type="search" id="search-input" placeholder="Search posts" aria-label="Search posts" autocomplete="off" spellcheck="false">
+      <button type="button" class="search-icon-close" aria-label="Close search"><kbd>esc</kbd></button>
+    </div>
+    <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
+  </div>
+</div>

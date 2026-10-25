@@ -1,0 +1,47 @@
+{{- /*
+  Home page post summary with a square thumbnail. Called as
+    {{ partial "post-summary.html" (dict "page" . "eager" true) }}
+  eager=true for the first post on page 1: its thumbnail is the largest thing
+  on screen (the LCP image), so it loads straight away at high priority instead
+  of lazily. Thumbnails are generated as WebP.
+
+  The image comes from layouts/partials/post-image.html.
+*/ -}}
+{{- $p := .page -}}
+{{- $eager := .eager -}}
+{{- $found := partial "post-image.html" $p -}}
+{{- $img := $found.img -}}
+{{- $remote := $found.remote -}}
+
+{{- $loading := cond $eager `fetchpriority="high"` `loading="lazy"` | safeHTMLAttr -}}
+<div class="post-preview{{ if or $img $remote }} has-thumb{{ end }}">
+  <a href="{{ $p.RelPermalink }}">
+      {{- if $img }}
+        {{- if in (slice "jpeg" "png" "webp" "gif" "tiff" "bmp") $img.MediaType.SubType }}
+          {{- $thumb := $img.Fill "300x300 Center q75 webp" }}
+      <div class="post-thumb">
+        <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $p.Title }}" {{ $loading }} decoding="async">
+      </div>
+        {{- else }}
+      <div class="post-thumb">
+        <img src="{{ $img.RelPermalink }}" alt="{{ $p.Title }}" {{ $loading }} decoding="async">
+      </div>
+        {{- end }}
+      {{- else if $remote }}
+      <div class="post-thumb">
+        <img src="{{ $remote }}" alt="{{ $p.Title }}" {{ $loading }} decoding="async">
+      </div>
+      {{- end }}
+      <h2 class="post-title">{{ $p.Title }}</h2>
+      {{ with $p.Params.subtitle }}
+      <h3 class="post-subtitle">{{ . }}</h3>
+      {{ end }}
+      <div class="post-content-preview">
+        {{ with $p.Description }}{{ . }}{{ else }}{{ $p.Summary | plainify | truncate 180 }}{{ end }}
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by {{ $p.Params.author | default site.Params.author }} on {{ $p.Date.Format "Mon, Jan 2, 2006" }}
+  </p>
+</div>
+<hr>

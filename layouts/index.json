@@ -1,0 +1,27 @@
+{{- /*
+  Search index for the site search (assets/js/search.js).
+  Site override of the theme's index.json, which put each post's whole summary
+  (often the entire post, as HTML) into every result. Now: title, a short
+  description, a small thumbnail, tags, category and date – smaller to download and readable as results.
+*/ -}}
+{{- $index := slice -}}
+{{- range site.RegularPages -}}
+  {{- $desc := .Description | default (.Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 160) -}}
+  {{- /* 120px square WebP thumbnail (shown at 60px, so sharp on retina) */ -}}
+  {{- $thumb := "" -}}
+  {{- with (partial "post-image.html" .).img -}}
+    {{- if in (slice "jpeg" "png" "webp" "gif" "tiff" "bmp") .MediaType.SubType -}}
+      {{- $thumb = (.Fill "120x120 Center q70 webp").RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $index = $index | append (dict
+      "thumb" $thumb
+      "title" .Title
+      "url" .RelPermalink
+      "description" $desc
+      "tags" (delimit (.Params.tags | default slice) " ")
+      "category" (delimit (.Params.categories | default slice) " ")
+      "date" (.Date.Format "2 January 2006")
+  ) -}}
+{{- end -}}
+{{- $index | jsonify -}}

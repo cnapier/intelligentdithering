@@ -1,0 +1,45 @@
+{{- /*
+  Site override of the theme comments partial.
+  Disqus is ~340 KB of scripts, images and tracking, so it's only loaded when the
+  reader scrolls near the comments (or presses the button). Same thread lookup as
+  before: Disqus matches the thread by the page URL.
+*/ -}}
+{{- if ne .Params.comment false -}}
+{{- with site.Config.Services.Disqus.Shortname }}
+<div id="comments" class="comments-lazy">
+  <div id="disqus_thread">
+    <button type="button" class="btn btn-default comments-load" id="disqus_load">Show comments</button>
+  </div>
+</div>
+<script>
+(function () {
+  var loaded = false, thread = document.getElementById("disqus_thread");
+  if (["localhost", "127.0.0.1"].indexOf(location.hostname) !== -1) {
+    thread.innerHTML = "<p>Disqus comments aren't loaded in local preview.</p>";
+    return;
+  }
+  window.disqus_config = function () {
+    this.page.url = {{ $.Permalink }};
+  };
+  function load() {
+    if (loaded) return;
+    loaded = true;
+    var s = document.createElement("script");
+    s.src = "https://{{ . }}.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    s.async = true;
+    (document.head || document.body).appendChild(s);
+  }
+  document.getElementById("disqus_load").addEventListener("click", load);
+  if (location.hash.indexOf("#comment") === 0 || location.hash === "#disqus_thread") { load(); return; }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { io.disconnect(); load(); }
+    }, { rootMargin: "600px 0px" });
+    io.observe(thread);
+  }
+})();
+</script>
+<noscript>Comments need JavaScript (they're powered by Disqus).</noscript>
+{{- end }}
+{{- end -}}

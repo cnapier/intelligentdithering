@@ -1,7 +1,8 @@
 {{ define "container" }}
 {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
-{{ range $paginator.Pages }}
-   {{ .Render "summary" }}
+{{ range $i, $p := $paginator.Pages }}
+   {{- /* First post on page 1 is the LCP image: load it eagerly */}}
+   {{ partial "post-summary.html" (dict "page" $p "eager" (and (eq $i 0) (eq $paginator.PageNumber 1))) }}
 {{ end }}
 
 {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}

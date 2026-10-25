@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {{- /* Dark mode follows the system setting (see "Dark mode" in assets/css/custom.scss) */}}
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1724" media="(prefers-color-scheme: dark)">
 
   {{- /* Site override of the theme baseof: SEO tags moved to layouts/partials/seo.html.
        Site CSS is fingerprinted (name changes when content changes) so browsers never use a stale copy. */}}
@@ -14,8 +18,7 @@
   {{ partial "seo.html" . }}
 
   <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL }}"  crossorigin="anonymous">
-  <!-- font-awesome -->
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+  {{- /* Font Awesome removed: icons are inline SVGs (layouts/partials/icon.html) */}}
 
   {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice
   "sass")) }}
@@ -86,6 +89,7 @@
   <!-- Page Header -->
   {{ partial "intro-header.html" . }}
 
+  <main id="main">
   {{ block "main" . }}
 
   <!-- Main Content -->
@@ -130,6 +134,7 @@
   </div>
 
   {{ end }}
+  </main>
 
   {{ partial "footer.html" . }}
 </body>

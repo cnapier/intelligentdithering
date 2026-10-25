@@ -1,0 +1,22 @@
+{{- /*
+  Site override of the theme 404: same full-screen header image
+  (img_404 = static/img/404-bg-dither.png), plus a short message and ways back in.
+*/ -}}
+{{ define "main" }}
+<script>document.body.classList.add('page-fullscreen');</script>
+<div class="notfound">
+  <p class="notfound-text">Looks like this connection's broken – the page may have moved, or it never existed.</p>
+  <div class="notfound-actions">
+    <a class="notfound-btn notfound-btn--primary" href="{{ "/" | relURL }}">Back to the home page</a>
+    <a class="notfound-btn" href="{{ "/archive/" | relURL }}">Browse all posts</a>
+    <button type="button" class="notfound-btn notfound-search">{{ partial "icon.html" "search" }} Search</button>
+  </div>
+</div>
+<script>
+  // "Search" opens the site search panel (assets/js/search.js)
+  document.querySelector('.notfound-search').addEventListener('click', function () {
+    var b = document.querySelector('.search-icon .search-button');
+    if (b) b.click();
+  });
+</script>
+{{ end }}

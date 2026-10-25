@@ -1,0 +1,34 @@
+{{- /*
+  Site override of the theme's social links: inline SVG icons instead of Font
+  Awesome, and an aria-label so screen readers announce each link.
+  Icon name = the social key in config ([params.social]): facebook, youtube, mastodon, rss...
+  Optional `label` on an entry sets the accessible name (e.g. "YouTube").
+*/ -}}
+{{- $socialMap := resources.Get "data/social.toml" | transform.Unmarshal -}}
+{{- $socialList := slice -}}
+{{- range $key, $value := .social -}}
+  {{- if $value -}}
+    {{- $social := $key | lower | index $socialMap | default dict -}}
+    {{- if reflect.IsMap $value -}}
+      {{- $social = merge $social $value -}}
+    {{- else if and $social (ne $value true) -}}
+      {{- $social = merge $social (dict "id" $value) -}}
+    {{- end -}}
+    {{- with $social -}}
+      {{- $socialList = $socialList | append (dict "title" $key | merge $social) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<ul class="list-inline sns-links{{ if .center }} text-center{{ end }}">
+{{- range sort $socialList "weight" -}}
+  {{- $destination := "" -}}
+  {{- if .url -}}{{- $destination = .url | relURL -}}
+  {{- else if .format -}}{{- $destination = printf (string .format) .id -}}{{- end -}}
+  {{- $name := .label | default (cond (eq (lower .title) "rss") "RSS feed" (.title | humanize)) }}
+  <li>
+    <a href="{{ $destination | safeURL }}" aria-label="{{ $name }}" title="{{ $name }}"{{ if or (urls.Parse $destination).Host .newtab }} target="_blank" rel="noopener"{{ end }}>
+      <span class="sns-icon">{{ partial "icon.html" (lower .title) }}</span>
+    </a>
+  </li>
+{{- end }}
+</ul>

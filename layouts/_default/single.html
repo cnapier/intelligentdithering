@@ -15,11 +15,15 @@
           {{- $img := or ($.Resources.GetMatch .) ($.Resources.GetMatch (printf "**%s" (path.Base .))) -}}
           {{- with $img -}}
             {{- $out := . -}}
-            {{- if and (in (slice "jpeg" "png" "webp" "tiff" "bmp") .MediaType.SubType) (gt .Width 1400) -}}
-              {{- $out = .Resize "1400x q85" -}}
+            {{- if in (slice "jpeg" "png" "webp" "tiff" "bmp") .MediaType.SubType -}}
+              {{- if gt .Width 1400 -}}
+                {{- $out = .Resize "1400x q82 webp" -}}
+              {{- else if ne .MediaType.SubType "webp" -}}
+                {{- $out = .Process "webp q82" -}}
+              {{- end -}}
             {{- end }}
         <figure class="post-featured-image">
-          <img src="{{ $out.RelPermalink }}"{{ with $out.Width }} width="{{ . }}"{{ end }}{{ with $out.Height }} height="{{ . }}"{{ end }} alt="{{ $.Title }}" data-action="zoom">
+          <img src="{{ $out.RelPermalink }}"{{ with $out.Width }} width="{{ . }}"{{ end }}{{ with $out.Height }} height="{{ . }}"{{ end }} alt="{{ $.Title }}" fetchpriority="high" decoding="async" data-action="zoom">
         </figure>
           {{- end -}}
         {{- end }}

@@ -1,0 +1,27 @@
+{{- /*
+  Finds a page's representative image. Used by the home page summaries
+  (post-summary.html) and the search index (index.json).
+    {{ $r := partial "post-image.html" $page }}  ->  dict "img" <resource|false> "remote" <url|"">
+  Lookup order:
+    1. coverImage in front matter (matched anywhere in the page bundle)
+    2. First image referenced in the post body (markdown ![]() or <img src>)
+    3. First image file in the page bundle
+*/ -}}
+{{- $p := . -}}
+{{- $img := false -}}
+{{- $remote := "" -}}
+{{- with $p.Params.coverimage -}}
+  {{- $img = or ($p.Resources.GetMatch .) ($p.Resources.GetMatch (printf "**%s" (path.Base .))) -}}
+{{- end -}}
+{{- if not $img -}}
+  {{- with findRESubmatch `!\[[^\]]*\]\(\s*<?([^)\s>]+)|<img[^>]+src=["']([^"']+)` $p.RawContent 1 -}}
+    {{- $m := index . 0 -}}
+    {{- $src := or (index $m 1) (index $m 2) -}}
+    {{- $img = or ($p.Resources.GetMatch $src) ($p.Resources.GetMatch (printf "**%s" (path.Base $src))) -}}
+    {{- if and (not $img) (hasPrefix $src "http") -}}{{- $remote = $src -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if and (not $img) (not $remote) -}}
+  {{- with $p.Resources.ByType "image" -}}{{- $img = index . 0 -}}{{- end -}}
+{{- end -}}
+{{- return (dict "img" $img "remote" $remote) -}}

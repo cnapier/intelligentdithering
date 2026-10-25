@@ -35,7 +35,7 @@ baseName = ""
 isPlainText = true
 notAlternative = true
 
-# prevent build failures when using Hugo's template _internal/opengraph.html 
+# prevent build failures when using Hugo's template _internal/opengraph.html
 # Posts live in content/posts/YYYY/MM/<slug>/ but are served at /<slug>/ –
 # the same "pretty permalink" URLs the WordPress site used.
 [permalinks]
@@ -91,7 +91,7 @@ og_image = "img/og-default.png"
 og_locale = "en_GB"
 html_lang = "en-GB"
 img_home = "img/home-bg-dither.png"
-img_404 = "img/404-bg.jpg"
+img_404 = "img/404-bg-dither.png"  # made by tools/make-404.py
 
 useFaviconGenerator = true
 
@@ -112,6 +112,14 @@ bio = "nerding out"
 [params.social]
 facebook = "intelligentdithering"
 rss = true
+
+# Custom-format entry, same as the theme's mastodon example below. The theme only
+# has old-style /user/, /c/ and /channel/ YouTube URLs, not @handles.
+[params.social.youtube]
+weight = 50
+format = "https://www.youtube.com/%v"
+id = "@intelligentdithering"
+label = "YouTube"
 
 [params.social.mastodon]
 weight = 56

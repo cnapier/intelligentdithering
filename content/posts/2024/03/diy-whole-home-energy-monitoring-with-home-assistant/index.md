@@ -29,7 +29,7 @@ CT Clamps measure the magnetic field coming from an electrical cable. My measuri
 
 **_I am not a qualified electrician. Using even these “safe” CT clamps does have a risk associated with it, and being in and around your electricity meter is obviously risky business. Please consult a suitably certified expert before attempting any of this! YOU HAVE BEEN WARNED!_**
 
-![Animated movie clip of a man being electrocuted, his hair standing on end](images/electric-shock.webp)
+<video src="images/electric-shock.mp4" poster="images/electric-shock-poster.webp" width="360" height="196" autoplay loop muted playsinline aria-label="Animated movie clip of a man being electrocuted, his hair standing on end"></video>
 
 ## The Plan
 

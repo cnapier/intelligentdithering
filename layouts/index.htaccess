@@ -10,12 +10,24 @@ ErrorDocument 404 /404.html
   <FilesMatch "\.(html|xml|json|txt|webmanifest)$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
+  <FilesMatch "\.(webp|png|jpe?g|gif|svg|ico|woff2?|ttf|eot|mp4|webm|css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+  # Must come after the rule above so it wins for fingerprinted files
   <FilesMatch "\.[0-9a-f]{64}\.(css|js)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-  <FilesMatch "\.(webp|png|jpe?g|gif|svg|ico|woff2?|ttf|eot)$">
-    Header set Cache-Control "public, max-age=604800"
-  </FilesMatch>
+</IfModule>
+
+# --- Security headers --------------------------------------------------------
+# HSTS: browsers only ever use https for this domain (1 year). No includeSubDomains,
+# so any subdomain that isn't on https yet is unaffected.
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
 </IfModule>
 
 # Old WordPress feed URLs -> Hugo feeds (permanent, so feed readers update the subscription)

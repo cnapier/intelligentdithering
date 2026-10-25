@@ -86,6 +86,7 @@ $post-img-max-height: 420px;
 
 .post-container figure:not(.post-featured-image) img {
   display: block;
+  border-radius: 6px; // same rounding as the featured image and thumbnails
   width: auto;
   height: auto; // width/height attributes are set for layout-shift; keep aspect ratio
   max-width: 100%;
@@ -175,4 +176,640 @@ a.external::after {
 }
 a.external:hover::after {
   opacity: 1;
+}
+
+// ---------------------------------------------------------------------------
+// Inline SVG icons (layouts/partials/icon.html) – replaces Font Awesome
+// ---------------------------------------------------------------------------
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: -0.125em;
+}
+
+// Social links: white icon in a filled circle (was fa-stack)
+.sns-links .sns-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 50%;
+  background: currentColor;
+  .icon {
+    width: 1.1em;
+    height: 1.1em;
+    fill: #fff;
+  }
+}
+
+// Search open/close are real <button>s now – make them look like the old links
+.search-button,
+.search-icon-close {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.navbar-custom .search-icon .search-button {
+  display: block;
+  padding: 20px;
+  color: #fff;
+  line-height: 20px;
+  &:hover,
+  &:focus { color: #7fdde2; }
+  @media only screen and (max-width: 767px) {
+    padding: 10px 15px;
+    color: #404040;
+  }
+}
+.search-icon-close .icon {
+  width: 1.4em;
+  height: 1.4em;
+}
+
+// Lazy-loaded Disqus placeholder
+.comments-lazy {
+  margin: 40px 0;
+  min-height: 60px;
+  text-align: center;
+}
+
+// ---------------------------------------------------------------------------
+// Accessibility fixes from Lighthouse
+// ---------------------------------------------------------------------------
+// Bigger tap targets for tag buttons (sidebar + post footer)
+.tags a {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 4px 8px 0;
+  line-height: 1.4;
+}
+// Footer "Powered by Hugo": don't rely on colour alone
+footer .copyright a {
+  text-decoration: underline;
+}
+// Code block line numbers: the Dracula style's grey is too faint on its background
+.post-container pre span[style*="user-select:none"],
+.post-container pre span[style*="user-select: none"] {
+  color: #a8adc4 !important;
+}
+
+// Inline videos (e.g. converted GIFs) behave like images
+.post-container video {
+  display: block;
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+// ---------------------------------------------------------------------------
+// Search panel – floating, Spotlight-style box over a dimmed page.
+// Markup: layouts/partials/search.html; result template: assets/js/search.js.
+// Overrides the theme's full-screen .search-page sheet.
+// ---------------------------------------------------------------------------
+.search-page {
+  background: rgba(10, 22, 40, 0.35);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  transform: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 150ms ease, visibility 0s linear 150ms;
+
+  &.search-active {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 150ms ease;
+    .search-panel {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+
+  .search-panel {
+    position: absolute;
+    top: 14vh;
+    left: 50%;
+    width: unquote("min(640px, calc(100% - 24px))"); // unquote: stop LibSass evaluating min()
+    transform: translateX(-50%) scale(0.97);
+    transition: transform 150ms ease;
+    background: rgba(255, 255, 255, 0.94);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    border-radius: 14px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    @media only screen and (max-width: 767px) {
+      top: 70px;
+    }
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    > .icon {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      color: #8a8f98;
+    }
+  }
+
+  #search-input {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 400;
+    color: #222;
+    background: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    &::-webkit-search-cancel-button { display: none; }
+    &::placeholder { color: #9aa0a8; }
+  }
+
+  // The "esc" key-cap doubles as the close button
+  .search-icon-close {
+    flex: 0 0 auto;
+    kbd {
+      display: inline-block;
+      padding: 2px 7px;
+      font-family: inherit;
+      font-size: 12px;
+      color: #6b7079;
+      background: rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      box-shadow: none;
+    }
+    &:hover kbd { color: #222; }
+  }
+
+  // Results: only takes up room when there is something to show
+  #search-results {
+    height: auto;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 0;
+    &:not(:empty) {
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 6px;
+    }
+  }
+}
+
+#search-results {
+  .search-result a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: #404040;
+    text-decoration: none;
+    &.is-selected {
+      background: rgba(0, 133, 161, 0.12);
+      .search-result-title { color: #006a80; }
+    }
+  }
+  .search-result-thumb {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    object-fit: cover;
+    background: #f2f2f2;
+  }
+  // Posts with no image: a crop of the dithered header instead of a blank square
+  .search-result-thumb--empty {
+    background: #0a1628 url("/img/home-bg-dither.png") 30% 40% / 400% auto no-repeat;
+  }
+  .search-result-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .search-result-title {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .search-result-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 2px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: #666;
+  }
+  .search-result-date {
+    display: none; // keeps rows compact; remove this line to show dates
+  }
+  .search-no-results {
+    margin: 0;
+    padding: 12px 10px;
+    color: #767676;
+    font-size: 14px;
+  }
+}
+
+// ===========================================================================
+// Dark mode – follows the reader's system setting (prefers-color-scheme).
+// One block of overrides for the theme, Bootstrap 3 and the rules above.
+// Palette: deep navy to match the menu bar, off-white text, teal links.
+// ===========================================================================
+$dm-bg: #0f1724;          // page
+$dm-surface: #172234;     // cards, pills, pager, inline code
+$dm-surface-2: #1e2b40;   // hover / selected
+$dm-border: #2a3850;
+$dm-text: #d5dbe4;
+$dm-heading: #eef2f7;
+$dm-muted: #9aa6b6;       // 7.3:1 on $dm-bg
+$dm-link: #5fcad2;        // 9:1 on $dm-bg
+$dm-link-hover: #9ae3e8;
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: $dm-bg;
+    color: $dm-text;
+  }
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $dm-heading;
+  }
+  a {
+    color: $dm-text;
+    &:hover,
+    &:focus {
+      color: $dm-link;
+    }
+  }
+  hr {
+    border-top-color: $dm-border;
+  }
+  .text-muted {
+    color: $dm-muted;
+  }
+
+  // --- Post body -----------------------------------------------------------
+  .post-container {
+    a,
+    a:visited {
+      color: $dm-link;
+    }
+    a:hover,
+    a:focus {
+      color: $dm-link-hover;
+    }
+    h2::before {
+      border-bottom-color: $dm-border;
+    }
+    blockquote {
+      color: $dm-muted;
+      border-left-color: $dm-border;
+    }
+    code {
+      color: #f3a6c4;
+      background-color: $dm-surface;
+    }
+    pre code {
+      color: inherit;
+      background: none;
+    }
+    table,
+    th,
+    td,
+    table.table > thead > tr > th,
+    table.table > tbody > tr > td {
+      border-color: $dm-border !important;
+    }
+    // Transparent PNGs drawn for white pages: give them a light backing.
+    // (Invisible behind normal photos and screenshots.)
+    img {
+      background-color: #f4f6f9;
+    }
+    .image-caption {
+      color: $dm-muted;
+    }
+  }
+  // Pages without a header image use dark-on-white heading text
+  .intro-header.style-text {
+    .site-heading,
+    .post-heading,
+    .page-heading {
+      color: $dm-heading;
+    }
+  }
+
+  // --- Home page / lists ---------------------------------------------------
+  .post-preview {
+    > a {
+      color: $dm-heading;
+      &:hover,
+      &:focus {
+        color: $dm-link;
+      }
+    }
+    .post-meta {
+      color: $dm-muted;
+      > a {
+        color: $dm-text;
+      }
+    }
+  }
+  .post-content-preview {
+    color: $dm-muted !important;
+  }
+  .post-preview.has-thumb > a > .post-thumb {
+    background: $dm-surface;
+  }
+  .listing-seperator {
+    color: $dm-link;
+  }
+
+  // Archive tag cloud
+  #tag_cloud .tag {
+    background: $dm-surface;
+    color: $dm-text;
+    &.focus {
+      color: #fff;
+    }
+  }
+  #tag_cloud .tag.tag-button--all {
+    background: $dm-surface;
+    color: $dm-link !important;
+    &.focus {
+      background-color: $dm-surface-2 !important;
+    }
+  }
+
+  // --- Sidebar / tags ------------------------------------------------------
+  .sidebar-container {
+    color: $dm-muted;
+    h5,
+    h5 a {
+      color: $dm-muted !important;
+    }
+    a {
+      color: $dm-muted !important;
+      &:hover,
+      &:active {
+        color: $dm-link !important;
+      }
+    }
+    .tags a {
+      border-color: $dm-border;
+      &:hover,
+      &:active {
+        border-color: $dm-link;
+      }
+    }
+  }
+  .side-catalog .catalog-body .active {
+    background-color: $dm-surface;
+  }
+
+  // --- Pager, buttons ------------------------------------------------------
+  .pager li > a,
+  .pager li > span {
+    background-color: $dm-surface;
+    border-color: $dm-border;
+    color: $dm-text;
+    span {
+      color: $dm-muted;
+    }
+    &:hover,
+    &:focus {
+      background-color: $dm-link;
+      border-color: $dm-link;
+      color: $dm-bg;
+      span {
+        color: $dm-bg;
+      }
+    }
+  }
+  .pager .disabled > a,
+  .pager .disabled > span {
+    background-color: $dm-surface;
+    color: $dm-muted;
+  }
+  .btn-default {
+    background-color: $dm-surface;
+    border-color: $dm-border;
+    color: $dm-text;
+    &:hover,
+    &:focus {
+      background-color: $dm-link;
+      border-color: $dm-link;
+      color: $dm-bg;
+    }
+  }
+
+  // --- Footer & social icons -----------------------------------------------
+  footer .copyright,
+  footer .copyright.text-muted {
+    color: $dm-muted;
+    a {
+      color: $dm-link;
+    }
+  }
+  .sns-links a {
+    color: $dm-muted;
+    &:hover,
+    &:focus {
+      color: $dm-link;
+    }
+    .sns-icon .icon {
+      fill: $dm-bg;
+    }
+  }
+
+  // --- Mobile menu dropdown (white card in light mode) ----------------------
+  @media only screen and (max-width: 767px) {
+    .navbar-default .navbar-collapse {
+      background: $dm-surface;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    .navbar-custom .navbar-collapse .nav li a,
+    .navbar-custom .search-icon .search-button {
+      color: $dm-text;
+    }
+  }
+
+  // --- Search panel --------------------------------------------------------
+  .search-page {
+    background: rgba(0, 0, 0, 0.5);
+    .search-panel {
+      background: rgba(23, 34, 52, 0.94);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+    #search-input {
+      color: $dm-heading;
+      &::placeholder {
+        color: $dm-muted;
+      }
+    }
+    .search-bar > .icon {
+      color: $dm-muted;
+    }
+    .search-icon-close kbd {
+      color: $dm-muted;
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+    #search-results:not(:empty) {
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+  }
+  #search-results {
+    .search-result a {
+      color: $dm-heading;
+      &.is-selected {
+        background: rgba(95, 202, 210, 0.16);
+        .search-result-title {
+          color: $dm-link-hover;
+        }
+      }
+    }
+    .search-result-desc,
+    .search-no-results {
+      color: $dm-muted;
+    }
+    .search-result-thumb {
+      background-color: $dm-surface;
+    }
+  }
+
+  // --- Comments placeholder -------------------------------------------------
+  .comments-lazy {
+    color: $dm-muted;
+  }
+
+  // 404 page: footer sits on top of the full-screen photo, so keep it white
+  .page-fullscreen footer {
+    .copyright,
+    .copyright.text-muted,
+    .copyright a,
+    .sns-links a {
+      color: #fff;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 404 page message (layouts/404.html) – sits under the title, above the
+// broken trace in the background image
+// ---------------------------------------------------------------------------
+.notfound {
+  position: fixed;
+  z-index: 2;
+  top: 230px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: unquote("min(560px, calc(100% - 32px))");
+  padding: 22px 24px;
+  text-align: center;
+  color: #e8edf3;
+  background: rgba(10, 22, 40, 0.78);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(63, 193, 201, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  @media only screen and (max-width: 767px) {
+    top: 232px; // the title wraps to two lines on phones
+  }
+}
+.notfound-text {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+.notfound-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.notfound-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #e8edf3;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.16);
+    text-decoration: none;
+  }
+}
+.notfound-btn--primary {
+  color: #0a1628;
+  background: #5fcad2;
+  border-color: #5fcad2;
+  &:hover,
+  &:focus {
+    color: #0a1628;
+    background: #9ae3e8;
+    border-color: #9ae3e8;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Wider post pages on big screens. Bootstrap caps the page at 1170px, which
+// leaves a ~750px text column floating in empty space on wide monitors.
+// Widen the column AND step up the text size together, so lines stay around
+// 80-90 characters (comfortable to read) instead of just getting longer.
+// Only post/page views (anything with an <article>), so lists are unchanged.
+// ---------------------------------------------------------------------------
+@media only screen and (min-width: 1400px) {
+  article > .container,
+  body:has(article) .intro-header .container {
+    width: 1320px;
+  }
+  .post-container {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  .post-container figure:not(.post-featured-image) img {
+    max-height: 480px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  article > .container,
+  body:has(article) .intro-header .container {
+    width: 1440px;
+  }
+  .post-container {
+    font-size: 19px;
+  }
+  .post-container figure:not(.post-featured-image) img {
+    max-height: 540px;
+  }
 }
