@@ -1,0 +1,24 @@
+{{- /*
+  Site override of the theme's archive tag cloud.
+  - Each button now has a real href (Show All -> /archive/, a tag -> its tag page),
+    so search engines can crawl them (Lighthouse "Links are not crawlable").
+    assets/js/archive.js still filters the list in place when clicked.
+  - The theme's per-count colour <style> block is gone: custom.scss gives all
+    tags one readable style.
+*/ -}}
+{{ $pages := .Site.RegularPages }}
+{{ if not (eq (len $.Site.Taxonomies.tags) 0) }}
+<div id='tag_cloud' class="tags tags-sup js-tags">
+  <a class="tag-button--all" href="{{ "/archive/" | relURL }}" data-encode="">
+    Show All
+    <sup>{{ len $pages }}</sup>
+  </a>
+  {{ range .Site.Taxonomies.tags.ByCount }}
+  <a href="{{ .Page.RelPermalink }}" data-sort="{{ printf " %04d" (sub (len $pages) .Count) }}" data-encode="{{ .Page.Title | lower | urlquery }}"
+    class="tag-button tag-color__{{ .Count }}" title="{{ .Page.Title }}" rel="{{ .Count }}">
+    {{ .Page.Title }}
+    <sup>{{ .Count }}</sup>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
