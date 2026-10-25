@@ -4,7 +4,8 @@
   reader scrolls near the comments (or presses the button). Same thread lookup as
   before: Disqus matches the thread by the page URL.
 */ -}}
-{{- if ne .Params.comment false -}}
+{{- /* Posts only: nothing under content/pages (or archive, about, etc.) gets comments */ -}}
+{{- if and (eq .Section "posts") (ne .Params.comment false) -}}
 {{- with site.Config.Services.Disqus.Shortname }}
 <div id="comments" class="comments-lazy">
   <div id="disqus_thread">
