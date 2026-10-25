@@ -131,6 +131,7 @@ The message and `-y` can be combined: `./publish.sh -y "New post"`.
 |---|---|---|
 | `SITE_URL` | `https://intelligentdithering.com` | Where to check the posts are live |
 | `LIVE_CHECKS` | `24` | How many times to check, 5 seconds apart (24 = 2 minutes) |
+| `INDEXNOW` | `1` | Set to `0` to skip the IndexNow ping (`INDEXNOW=0 ./publish.sh`) |
 
 **What it does, in order:**
 
@@ -143,6 +144,9 @@ The message and `-y` can be combined: `./publish.sh -y "New post"`.
 7. Pushes to GitHub.
 8. If the GitHub CLI (`gh`) is installed and logged in, waits for the Actions build and reports if it fails.
 9. Fetches each published post's URL until it returns HTTP 200, then reports it as live.
+10. Pings **IndexNow** with the posts confirmed live (plus the home page, and any deleted posts that now return 404) so Bing, DuckDuckGo, Ecosia, Copilot/ChatGPT search, Yandex, Seznam, Naver and Yep re-crawl them within hours. Google doesn't use IndexNow – it still goes by the sitemap in Search Console. A failed ping is only a warning. Submissions show up in Bing Webmaster Tools under **IndexNow**.
+
+**IndexNow key:** the key is the file `static/<key>.txt`, which contains nothing but its own name (32 hex characters), so Hugo publishes it at `https://intelligentdithering.com/<key>.txt` for the engines to verify. Don't delete or rename it. To replace it: delete the old file, then run `k=$(openssl rand -hex 16); printf '%s' "$k" > "static/$k.txt"` and publish. The ping is skipped until the new key file is live.
 
 `publish.sh` doesn't run the SEO check, so run `./test.sh` first.
 

@@ -5,7 +5,8 @@
 #   ./publish.sh "Fix typo"       # your own commit message
 #   ./publish.sh -y               # don't ask before un-drafting posts
 #
-# Needs: git, hugo. Optional: gh (GitHub CLI, logged in) to follow the build.
+# Needs: git, hugo, curl. Optional: gh (GitHub CLI, logged in) to follow the build.
+# Once posts are live it pings IndexNow (Bing etc.) – set INDEXNOW=0 to skip.
 # Written for macOS's bash 3.2, so no arrays-of-arrays or GNU-only flags.
 
 set -euo pipefail
@@ -20,7 +21,7 @@ MSG=""
 for arg in "$@"; do
   case "$arg" in
     -y|--yes) ASSUME_YES=1 ;;
-    -h|--help) sed -n '2,9p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
+    -h|--help) sed -n '2,10p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
     *) MSG="$arg" ;;
   esac
 done
@@ -156,6 +157,8 @@ else
   warn "gh not installed/logged in – check the Actions tab on GitHub for the build"
 fi
 
+SUBMIT=""   # URLs for IndexNow: posts confirmed live, plus deleted posts now gone
+code=""
 for f in $PUBLISHING; do
   url=$(post_url "$f")
   printf '  Checking %s ' "$url"
@@ -163,7 +166,58 @@ for f in $PUBLISHING; do
     code=$(curl -s -o /dev/null -w '%{http_code}' "$url" || true)
     [ "$code" = 200 ] && break; printf '.'; sleep 5
   done
-  [ "$code" = 200 ] && printf ' \033[32mlive\033[0m\n' || printf ' \033[33mnot live yet (HTTP %s)\033[0m\n' "$code"
+  if [ "$code" = 200 ]; then
+    printf ' \033[32mlive\033[0m\n'; SUBMIT="$SUBMIT $url"
+  else
+    printf ' \033[33mnot live yet (HTTP %s)\033[0m\n' "$code"
+  fi
 done
+for f in $CHANGED; do                       # deleted posts: tell engines they're gone
+  [ -f "$f" ] && continue
+  url=$(post_url "$f")
+  code=$(curl -s -o /dev/null -w '%{http_code}' "$url" || true)
+  case "$code" in 404|410) SUBMIT="$SUBMIT $url" ;; esac
+done
+
+# --- 6. Ping search engines (IndexNow) ----------------------------------------
+# One POST to api.indexnow.org is shared with Bing (and so DuckDuckGo, Ecosia,
+# Copilot/ChatGPT search), Yandex, Seznam, Naver and Yep. Google doesn't take
+# part – it still relies on the sitemap. Only URLs that actually changed and are
+# confirmed live are sent. Any failure is a warning; the publish is already done.
+# The key is static/<key>.txt, a file whose only content is its own name.
+indexnow_key() {
+  for kf in static/*.txt; do
+    [ -f "$kf" ] || continue
+    k=$(basename "$kf" .txt)
+    if [[ "$k" =~ ^[A-Za-z0-9-]{8,128}$ ]] && [ "$(tr -d '[:space:]' < "$kf")" = "$k" ]; then
+      echo "$k"; return 0
+    fi
+  done
+  return 0
+}
+
+KEY=$(indexnow_key)
+if [ "${INDEXNOW:-1}" = 0 ]; then
+  echo "IndexNow: skipped (INDEXNOW=0)"
+elif [ -z "$KEY" ]; then
+  warn "IndexNow: no key file in static/ – see the README"
+elif [ -z "$SUBMIT" ]; then
+  echo "IndexNow: no changed post URLs to submit"
+elif [ "$(curl -s -o /dev/null -w '%{http_code}' "$SITE_URL/$KEY.txt" || true)" != 200 ]; then
+  warn "IndexNow: $SITE_URL/$KEY.txt isn't live yet – skipped"
+else
+  SUBMIT="$SUBMIT $SITE_URL/"               # home page lists the newest posts
+  host=${SITE_URL#*://}; host=${host%%/*}
+  list=""; for u in $SUBMIT; do list="${list:+$list,}\"$u\""; done
+  body="{\"host\":\"$host\",\"key\":\"$KEY\",\"keyLocation\":\"$SITE_URL/$KEY.txt\",\"urlList\":[$list]}"
+  code=$(curl -s -o "$TMP/indexnow" -w '%{http_code}' --max-time 20 \
+           -H 'Content-Type: application/json; charset=utf-8' \
+           --data "$body" https://api.indexnow.org/indexnow || true)
+  case "$code" in
+    200|202) ok "IndexNow: submitted $(echo $SUBMIT | wc -w | tr -d ' ') URL(s) to Bing, Yandex & co." ;;
+    429)     warn "IndexNow: rate-limited (HTTP 429) – nothing lost, engines will crawl as normal" ;;
+    *)       warn "IndexNow: HTTP ${code:-no response} $(head -c 200 "$TMP/indexnow" 2>/dev/null || true)" ;;
+  esac
+fi
 
 ok "Done"

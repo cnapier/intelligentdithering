@@ -1,0 +1,7 @@
+{{- /*
+  Site override of the theme heading hook. The theme's ¶ anchor link had no text
+  for screen readers (Lighthouse: "Links must have discernible text"), so it now
+  carries an aria-label. The ¶ is still drawn by CSS and hidden from assistive tech.
+*/ -}}
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}<a class="anchorjs-link" href="#{{ .Anchor | safeURL }}" aria-label="Link to section: {{ .PlainText }}"></a></h{{ .Level }}>
+{{- /* no trailing newline */ -}}
