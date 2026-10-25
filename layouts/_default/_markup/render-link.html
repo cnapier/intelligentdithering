@@ -1,14 +1,17 @@
 {{- /*
   Site override of the theme link hook.
-  The theme ran every link through relURL, which turned in-page anchors like
-  #soldering-iron-kit into /#soldering-iron-kit – a link to the home page – so
-  every table of contents on the site was broken. Anchors and query-only links
-  are now left alone; external links still open in a new tab.
+  - In-page anchors (#heading) and query links are left alone. The theme ran
+    every link through relURL, which turned #anchor into /#anchor (the home page).
+  - External links open in a new tab and get class="external", which
+    assets/css/custom.scss uses to add a small ↗ after the link text, plus a
+    screen-reader note that the link opens a new tab. Links that wrap an image
+    don't get the arrow.
 */ -}}
 {{- $dest := .Destination -}}
-{{- $isExternal := or (hasPrefix $dest "http://") (hasPrefix $dest "https://") -}}
-{{- if not (or $isExternal (hasPrefix $dest "#") (hasPrefix $dest "?") (hasPrefix $dest "mailto:") (hasPrefix $dest "tel:")) -}}
+{{- $isExternal := and (or (hasPrefix $dest "http://") (hasPrefix $dest "https://")) (not (hasPrefix $dest site.BaseURL)) -}}
+{{- if not (or $isExternal (hasPrefix $dest "http") (hasPrefix $dest "#") (hasPrefix $dest "?") (hasPrefix $dest "mailto:") (hasPrefix $dest "tel:")) -}}
   {{- $dest = $dest | relURL -}}
 {{- end -}}
-<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- $isImage := strings.Contains (string .Text) "<img" -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isExternal }} target="_blank" rel="noopener"{{ if not $isImage }} class="external"{{ end }}{{ end }}>{{ .Text | safeHTML }}{{ if and $isExternal (not $isImage) }}<span class="sr-only"> (opens in a new tab)</span>{{ end }}</a>
 {{- /* no trailing newline */ -}}

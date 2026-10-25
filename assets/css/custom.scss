@@ -155,3 +155,24 @@ $nav-bar-link-hover: #7fdde2;
     color: #404040;
   }
 }
+
+// ---------------------------------------------------------------------------
+// Small ↗ after external links in posts (class added by
+// layouts/_default/_markup/render-link.html). The arrow is decoration only:
+// the "/ ''" gives it empty alt text so screen readers skip it – they get
+// "(opens in a new tab)" from a hidden span instead.
+// ---------------------------------------------------------------------------
+a.external::after {
+  content: "\2197";            // ↗
+  content: "\2197" / "";
+  display: inline-block;       // keeps the arrow out of the underline
+  margin-left: 0.15em;
+  font-size: 0.75em;
+  line-height: 1;
+  vertical-align: 0.15em;
+  opacity: 0.7;
+  text-decoration: none;
+}
+a.external:hover::after {
+  opacity: 1;
+}

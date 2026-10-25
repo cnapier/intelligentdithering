@@ -29,12 +29,21 @@ More and more new sites are geo-blocking content. NordVPN allows me to quickly a
 
 Three nerds discussing tech, Apple, programming, and loosely related matters. Hosted by [Marco Arment](https://marco.org/), [Casey Liss](https://www.caseyliss.com/), and [John Siracusa](https://hypercritical.co/).
 
+[**Intentional AI**](https://relay.fm/intentional)
+
+Discover practical, tactical ways to become more productive using artificial intelligence with Chris Bailey and David Sparks.
+
+[**Bookworm**](https://bookworm.transistor.fm)
+
+Bookworm is dedicated to doing more than just reading books. Mike Schmitz & Cory Hixson read a book every two weeks and discuss ways to apply the author's lessons to their lives.
+
 
 ## Websites / Services
 
 [**FastMail**](https://ref.fm/u20028688)
 
 For my email I use FastMail. Rock solid, loads of amazing features including masked email for signing up to new sites you think might spam you. Can’t recommend it highly enough. You can get 10% off your first year by [using this link](https://ref.fm/u20028688)
+
 
 [**IONOS for web hosting / Virtual Private Servers**](https://aklam.io/tDQGIr)
 

@@ -6,7 +6,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  {{- /* Site override of the theme baseof: SEO tags moved to layouts/partials/seo.html */}}
+  {{- /* Site override of the theme baseof: SEO tags moved to layouts/partials/seo.html.
+       Site CSS is fingerprinted (name changes when content changes) so browsers never use a stale copy. */}}
   {{- with .Site.Params.author }}
   <meta name="author" content="{{ . }}">
   {{- end }}
@@ -18,16 +19,16 @@
 
   {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice
   "sass")) }}
-  {{- $style := resources.Get "sass/main.scss" | css.Sass $options -}}
+  {{- $style := resources.Get "sass/main.scss" | css.Sass $options | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
-  {{ $zoom_css := resources.Get "zoomjs/zoom.css" | resources.Minify -}}
+  {{ $zoom_css := resources.Get "zoomjs/zoom.css" | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $zoom_css.RelPermalink }}">
 
   {{ range .Site.Params.custom_css -}}
   {{ $custom_template := resources.Get . }}
   {{ if $custom_template }}
-  {{ $custom_style := $custom_template | css.Sass | resources.Minify }}
+  {{ $custom_style := $custom_template | css.Sass | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $custom_style.RelPermalink }}">
   {{ end }}
   {{- end -}}
