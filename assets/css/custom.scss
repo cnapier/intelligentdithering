@@ -563,7 +563,9 @@ $dm-link-hover: #9ae3e8;
   .sidebar-container {
     color: $dm-muted;
     h5,
-    h5 a {
+    h5 a,
+    .sidebar-title,
+    .sidebar-title a {
       color: $dm-muted !important;
     }
     a {
@@ -811,5 +813,136 @@ $dm-link-hover: #9ae3e8;
   }
   .post-container figure:not(.post-featured-image) img {
     max-height: 540px;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Accessibility: contrast and heading order (Lighthouse)
+// The theme's light greys (#a3a3a3, #bfbfbf) are only ~2–2.5:1 on white;
+// #6b6b6b is 5.3:1 and still reads as secondary text.
+// ---------------------------------------------------------------------------
+$a11y-muted: #6b6b6b;
+
+// Sizing for the sidebar headings – they're <h2 class="sidebar-title"> now
+// (were <h5>, which skipped heading levels); keep the old small look
+.sidebar-container .sidebar-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 10px 0;
+  padding-bottom: 1em;
+  a {
+    text-decoration: none;
+  }
+}
+
+// Colours for light mode only (dark mode has its own in the block above)
+@media (prefers-color-scheme: light) {
+  .post-content-preview {
+    color: $a11y-muted !important;
+  }
+  .post-preview .post-meta {
+    color: $a11y-muted;
+  }
+  .sidebar-container {
+    color: $a11y-muted;
+    a {
+      color: $a11y-muted !important;
+    }
+    .tags a {
+      border-color: #c8c8c8;
+    }
+    .sidebar-title,
+    .sidebar-title a {
+      color: $a11y-muted !important;
+    }
+  }
+}
+// Code comments: Dracula's #6272a4 is too dim on its #282a36 background
+.post-container pre span[style*="color:#6272a4"] {
+  color: #9aa5d6 !important;
+}
+
+// More contrast fixes (axe-core): footer, pager, archive tag cloud, links in text
+@media (prefers-color-scheme: light) {
+  footer .copyright.text-muted {
+    color: $a11y-muted;
+  }
+  .post-container .pager li > a > span {
+    color: $a11y-muted;
+  }
+  // Archive year headings: #0085a1 is 4.2:1 on white, just under the 4.5 minimum
+  .listing-seperator {
+    color: #006a80;
+  }
+  .post-container .pager li > a:hover > span,
+  .post-container .pager li > a:focus > span {
+    color: #fff;
+  }
+}
+// Links inside paragraphs and lists are underlined, so they don't rely on colour alone
+.post-container p a,
+.post-container ul:not(.pager) li a,
+.post-container ol li a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+// Archive tag cloud: the theme colours tags by count (white on pastel, ~2:1).
+// Use one readable style instead; the selected tag is solid teal.
+html body #tag_cloud a {
+  background: #eef2f3 !important;
+  color: #2f5961 !important;
+  &:hover,
+  &:active,
+  &.focus {
+    background: #006a80 !important;
+    color: #fff !important;
+  }
+  &.tag-button--all {
+    color: #006a80 !important;
+    &:hover,
+    &:active,
+    &.focus {
+      background: #006a80 !important;
+      color: #fff !important;
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  html body #tag_cloud a {
+    background: $dm-surface !important;
+    color: $dm-text !important;
+    &:hover,
+    &:active,
+    &.focus {
+      background: $dm-link !important;
+      color: $dm-bg !important;
+    }
+    &.tag-button--all {
+      color: $dm-link !important;
+      &:hover,
+      &:active,
+      &.focus {
+        background: $dm-link !important;
+        color: $dm-bg !important;
+      }
+    }
+  }
+  // Tags at the top of a post with no header image
+  .intro-header.style-text .tags .tag {
+    color: $dm-text;
+    border-color: $dm-border;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-container .pager li > a > span {
+    color: $dm-muted;
+  }
+  .post-container .pager li > a:hover > span,
+  .post-container .pager li > a:focus > span {
+    color: $dm-bg;
   }
 }

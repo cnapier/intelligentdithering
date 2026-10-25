@@ -2,9 +2,9 @@
 <section class="visible-md visible-lg">
   <hr>
   {{ with .Site.GetPage "/about" }}
-  <h5><a href={{"about/" | relURL }}>ABOUT ME</a></h5>
+  <h2 class="sidebar-title"><a href={{"about/" | relURL }}>ABOUT ME</a></h2>
   {{ else }}
-  <h5>ABOUT ME</h5>
+  <h2 class="sidebar-title">ABOUT ME</h2>
   {{ end }}
 
   {{ $sidebar := .Site.Params.sidebar }}
