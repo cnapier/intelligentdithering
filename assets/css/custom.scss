@@ -975,3 +975,18 @@ html body #tag_cloud a {
     color-scheme: light; // same white-canvas fix as the Disqus iframe, for dark mode
   }
 }
+
+// ---------------------------------------------------------------------------
+// Affiliate disclaimer (layouts/partials/affiliate-disclaimer.html)
+// ---------------------------------------------------------------------------
+.affiliate-disclaimer {
+  font-size: 0.85em;
+  font-style: italic;
+  color: #6b7280;
+  margin: 0 0 1.5em;
+}
+@media (prefers-color-scheme: dark) {
+  .affiliate-disclaimer {
+    color: $dm-muted;
+  }
+}

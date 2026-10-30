@@ -10,6 +10,7 @@
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
+        {{ partial "affiliate-disclaimer.html" . }}
         {{- /* Featured image (WordPress coverImage) shown above the post body */ -}}
         {{- with .Params.coverimage -}}
           {{- $img := or ($.Resources.GetMatch .) ($.Resources.GetMatch (printf "**%s" (path.Base .))) -}}

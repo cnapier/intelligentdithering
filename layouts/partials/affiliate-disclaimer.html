@@ -1,0 +1,8 @@
+{{- /* One-line affiliate disclaimer at the top of every post.
+       Text: params.affiliate_disclaimer in config.toml.
+       Hide on a single post with `affiliate_disclaimer: false` in its front matter. */ -}}
+{{- if and (eq .Section "posts") (ne .Params.affiliate_disclaimer false) -}}
+{{- with site.Params.affiliate_disclaimer }}
+<p class="affiliate-disclaimer">{{ . | markdownify }}</p>
+{{- end -}}
+{{- end -}}

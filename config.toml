@@ -83,6 +83,8 @@ weight = 50
 
 [params]
 author = "Colin"
+# One-line disclaimer shown at the top of every post (layouts/partials/affiliate-disclaimer.html)
+affiliate_disclaimer = "This post may contain affiliate links. If you buy through them I may earn a small commission, at no extra cost to you."
 description = "Overthinking technology so you don't have to"
 # Used for the home page / fallback meta description (the tagline alone is too short for search results)
 seo_description = "Open source, automation and digital independence – practical guides on Raspberry Pi, Mac and iOS apps, home automation and school IT from a working sysadmin."
