@@ -79,11 +79,6 @@ identifier = "things"
 name = "Things I Use"
 url = "/things-i-use/"
 weight = 50
-[[menu.main]]
-identifier = "newsletter"
-name = "Newsletter"
-url = "/newsletter/"
-weight = 60
 
 
 [params]
