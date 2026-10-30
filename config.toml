@@ -109,7 +109,7 @@ enable = true
 gravatarEmail = "colin@intelligentdithering.com"
 # Overwritten by your gravatar image if `gravatarEmail` is filled
 avatar = "img/home-bg.jpg"
-bio = "nerding out"
+bio = "Proud to be a nerd"
 
 [params.social]
 facebook = "intelligentdithering"

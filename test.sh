@@ -8,7 +8,7 @@
 #   ./test.sh --all --links
 #   SKIP_SEO=1 ./test.sh # straight to the server
 
-cd ~/Sites/IntelligentDithering/ || exit 1
+cd "$(dirname "$0")" || exit 1
 
 if [ -z "${SKIP_SEO:-}" ]; then
   if command -v python3 >/dev/null; then
@@ -22,5 +22,11 @@ if [ -z "${SKIP_SEO:-}" ]; then
 fi
 
 mkdir -p /tmp/hugotest
-open http://127.0.0.1:1313
+if command -v open >/dev/null; then
+  open http://127.0.0.1:1313          # macOS
+elif command -v xdg-open >/dev/null; then
+  xdg-open http://127.0.0.1:1313      # Linux desktop
+else
+  echo "Preview: http://127.0.0.1:1313  (no 'open'/'xdg-open' found – open it yourself)"
+fi
 hugo server --buildFuture -D --cleanDestinationDir --bind 0.0.0.0 --buildDrafts -d /tmp/hugotest/
