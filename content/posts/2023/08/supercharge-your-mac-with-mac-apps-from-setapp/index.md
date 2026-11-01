@@ -13,7 +13,7 @@ aliases:
 guid: "http://localhost:1313/supercharge-your-mac-with-mac-apps-from-setapp/"
 ---
 
-#### 5 Mac apps that I use every day (out of over 240!) for one low monthly price.
+## 5 Mac apps that I use every day (out of over 240!) for one low monthly price.
 
 SetApp is a fantastic service for the Mac (and iOS) that gives you access to over 240 apps for a monthly subscription of only $9.99 a month. I have been using it for several years and even if you only use a handful of apps, it is sure to save you money. It is like a buffet of apps, all you can eat!
 

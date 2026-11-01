@@ -28,8 +28,8 @@
   {{- $title = printf "%s: %s | %s" $label $name site.Title -}}
 {{- else if .Params.seoTitle -}}
   {{- $title = .Params.seoTitle -}}
-{{- else if gt (len $name) 50 -}}
-  {{- /* Long titles: drop the site-name suffix so the post title isn't truncated in results */ -}}
+{{- else if gt (add (len $name) (len site.Title) 3) 60 -}}
+  {{- /* Long titles: drop the site-name suffix if it would push the title past 60 chars and get it truncated in results */ -}}
   {{- $title = $name -}}
 {{- else -}}
   {{- $title = printf "%s | %s" $name site.Title -}}
@@ -58,7 +58,8 @@
 {{- end -}}
 {{- $desc = $desc | default site.Params.seo_description | default site.Params.description -}}
 {{- with $pager -}}
-  {{- if gt .PageNumber 1 }}{{ $desc = printf "%s (page %d)" $desc .PageNumber }}{{ end -}}
+  {{- /* Trim first so the " (page N)" suffix doesn't push the description past 160 chars */ -}}
+  {{- if gt .PageNumber 1 }}{{ $desc = printf "%s (page %d)" ($desc | truncate 148) .PageNumber }}{{ end -}}
 {{- end }}
 <meta name="description" content="{{ $desc }}">
 {{- with .Params.tags }}

@@ -32,7 +32,7 @@ I have found that this simple image will work on all of the machines in our netw
 
 This allows us to focus on other work. If it would take longer than 30 minutes to troubleshoot the issue, we just wipe the machine and it is sorted. Also gives the machine a clear out and the user that “new install” feeling.
 
-#### In summary
+## In summary
 
 - Install Windows 7 in Audit mode on a Virtual Machine
 
