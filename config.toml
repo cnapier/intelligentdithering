@@ -87,7 +87,7 @@ author = "Colin"
 affiliate_disclaimer = "This post may contain affiliate links. If you buy through them I may earn a small commission, at no extra cost to you."
 description = "Overthinking tech so you don't have to"
 # Used for the home page / fallback meta description (the tagline alone is too short for search results)
-seo_description = "Open source, automation and digital independence – practical guides on Raspberry Pi, Mac and iOS apps, home automation and school IT from a working sysadmin."
+seo_description = "Open source, automation and digital independence – practical guides on Raspberry Pi, Apple, home automation and school IT from a working sysadmin."
 # Default share image for pages with no image of their own (1200x630)
 og_image = "img/og-default.png"
 og_locale = "en_GB"
